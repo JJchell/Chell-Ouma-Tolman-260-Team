@@ -5,13 +5,14 @@
  */
 package model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  *
  * @author scott
  */
-public class FortScene extends Scene{
+public class FortScene extends Scene  implements Serializable{
     
     private String fortName;
     

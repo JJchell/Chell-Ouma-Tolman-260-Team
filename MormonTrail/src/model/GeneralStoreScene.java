@@ -5,37 +5,39 @@
  */
 package model;
 
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
  *
  * @author scott
  */
-public class GeneralStoreScene extends Scene{
+public class GeneralStoreScene extends Scene  implements Serializable{
     
-    private Inventory inventory;
+    private ArrayList<Inventory> inventory;
     
     public GeneralStoreScene(String Description) {
         super(Description);
     }
 
-    public GeneralStoreScene(Inventory inventory, String Description) {
+    public GeneralStoreScene(ArrayList<Inventory> inventory, String Description) {
         super(Description);
         this.inventory = inventory;
     }
 
-    public Inventory getInventory() {
+    public ArrayList<Inventory> getInventory() {
         return inventory;
     }
 
-    public void setInventory(Inventory inventory) {
+    public void setInventory(ArrayList<Inventory> inventory) {
         this.inventory = inventory;
     }
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 67 * hash + Objects.hashCode(this.inventory);
+        int hash = 3;
+        hash = 71 * hash + Objects.hashCode(this.inventory);
         return hash;
     }
 
@@ -61,7 +63,5 @@ public class GeneralStoreScene extends Scene{
     public String toString() {
         return "GeneralStoreScene{" + "inventory=" + inventory + '}';
     }
-    
-    
-    
+
 }

@@ -5,16 +5,15 @@
  */
 package model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author scott
  */
-public class RiverCrossingScene extends Scene{
+public class RiverCrossingScene extends Scene  implements Serializable{
     
     public RiverCrossingScene(String Description) {
         super(Description);
-    }
-    
-    
-    
+    }  
 }

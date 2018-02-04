@@ -5,10 +5,12 @@
  */
 package model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author scott
  */
-public enum InventoryItemType {
+public enum InventoryItemType  implements Serializable{
     Ox, Wagon, Food, SpareWheel, Ammunition, MaxWeight, MaxStrength 
 };
