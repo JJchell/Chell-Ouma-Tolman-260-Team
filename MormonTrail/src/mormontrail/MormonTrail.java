@@ -6,6 +6,9 @@
 package mormontrail;
 
 import  model.Character;
+import model.Event;
+import model.Map;
+
 /**
  *
  * @author TheChells
@@ -32,6 +35,13 @@ public class MormonTrail {
         int jamesGathering = james.getGatheringSkill();
         int jamesStamina = james.getDailyStaminaDraw();
         int jamesHealth = james.getCurrentHealth();
+        
+        
+        Map map = new Map();
+        //map.setLocation(new Location(LocationType.TOWN, "TheMilePost"));
+        
+        Event event1 = new Event();
+        event1.setDescription("Add description here");
         
         
         System.out.println("Name = " + jamesName + "\nMoney = " + jamesMoney 
