@@ -5,13 +5,14 @@
  */
 package model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  *
  * @author scott
  */
-public class DailyTrailStopScene extends Scene{
+public class DailyTrailStopScene extends Scene  implements Serializable{
     
     private boolean hasNearbyTown;
     private String nearbyTownName;

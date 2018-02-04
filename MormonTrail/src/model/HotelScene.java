@@ -5,6 +5,7 @@
  */
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -12,7 +13,7 @@ import java.util.Objects;
  *
  * @author scott
  */
-public class HotelScene extends Scene{
+public class HotelScene extends Scene  implements Serializable{
     
     private ArrayList<Character> characters;
     

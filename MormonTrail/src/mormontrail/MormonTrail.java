@@ -5,9 +5,19 @@
  */
 package mormontrail;
 
-import  model.Character;
-import model.Event;
-import model.Map;
+import java.util.ArrayList;
+import model.Character;
+import model.InventoryItemType;
+import model.Scene;
+import model.RiverCrossingScene;
+import model.DailyTrailStopScene;
+import model.FortScene;
+import model.TownScene;
+import model.HotelScene;
+import model.GeneralStoreScene;
+import model.Inventory;
+//import model.Event;
+//import model.Map;
 
 /**
  *
@@ -37,16 +47,37 @@ public class MormonTrail {
         int jamesHealth = james.getCurrentHealth();
         
         
-        Map map = new Map();
+        /*Map map = new Map();
         //map.setLocation(new Location(LocationType.TOWN, "TheMilePost"));
         
         Event event1 = new Event();
-        event1.setDescription("Add description here");
+        event1.setDescription("Add description here");*/
         
         
-        System.out.println("Name = " + jamesName + "\nMoney = " + jamesMoney 
-                + "\nHunting skill = " + jamesHunting + "\nGather skill = " 
-                + jamesGathering + "\nStamina = " + jamesStamina 
-                + "\nHealth = " + jamesHealth);
+        System.out.println(james.toString());
+        
+        Scene river = new RiverCrossingScene("This river looks treacherous!");
+        System.out.println(river.toString());
+        
+        Scene stop = new DailyTrailStopScene("Look! There is a Buffalo!");
+        System.out.println(stop.toString());
+        
+        Scene fort = new FortScene("Hopefully this will keep us safe from the Indians.");
+        System.out.println(fort.toString());
+        
+        Scene town = new TownScene("Welcome Mormons!");
+        System.out.println(town.toString());
+        
+        Scene hotel = new HotelScene("Now this is camping!");
+        System.out.println(hotel.toString());
+        
+        Inventory inventory = new Inventory(InventoryItemType.Ox, 1300, 70);
+        ArrayList<Inventory> items = new ArrayList<Inventory>();
+        items.add(inventory);
+        
+        Scene store = new GeneralStoreScene(items, "Maybe they have a seniors' discount.");
+        System.out.println(store.toString());
+        
+        
     }
 }

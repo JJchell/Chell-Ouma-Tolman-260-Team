@@ -5,6 +5,7 @@
  */
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -12,7 +13,7 @@ import java.util.Objects;
  *
  * @author scott
  */
-public class TownScene extends FortScene{
+public class TownScene extends FortScene  implements Serializable{
     
     private String townName;
     private ArrayList<Character> characters;
