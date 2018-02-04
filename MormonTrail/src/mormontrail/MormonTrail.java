@@ -11,11 +11,13 @@ import model.InventoryItemType;
 import model.Scene;
 import model.RiverCrossingScene;
 import model.DailyTrailStopScene;
+import model.Event;
 import model.FortScene;
 import model.TownScene;
 import model.HotelScene;
 import model.GeneralStoreScene;
 import model.Inventory;
+import model.Map;
 //import model.Event;
 //import model.Map;
 
@@ -48,10 +50,24 @@ public class MormonTrail {
         
         
         /*Map map = new Map();
-        //map.setLocation(new Location(LocationType.TOWN, "TheMilePost"));
+        map.setLocation(new Location(LocationType.TOWN, "TheMilePost"));
         
         Event event1 = new Event();
-        event1.setDescription("Add description here");*/
+        event1.setDescription("You've been bitten by a snake.");
+        
+        Event event2 = new Event();
+        event2.setDescription("You have the flu.");
+        
+        Event event3 = new Event();
+        event3.setDescription("You fell and scraped your knee.");
+        
+        Event event4 = new Event();
+        event4.setDescription("You are hungry.");*/
+        
+        
+        
+        
+        
         
         
         System.out.println(james.toString());
