@@ -49,7 +49,7 @@ public class MormonTrail {
         
         
         Map map = new Map();
-        map.setLocation(new Location(LocationType.town, "TheMilePost"));
+        //map.setLocation(new Location(LocationType.town, "TheMilePost"));
         
         Event event1 = new Event();
         event1.setDescription("You've been bitten by a snake.");
