@@ -11,15 +11,14 @@ import model.InventoryItemType;
 import model.Scene;
 import model.RiverCrossingScene;
 import model.DailyTrailStopScene;
-import model.Event;
 import model.FortScene;
 import model.TownScene;
 import model.HotelScene;
 import model.GeneralStoreScene;
 import model.Inventory;
+import model.Event;
 import model.Map;
-//import model.Event;
-//import model.Map;
+import model.LocationType;
 
 /**
  *
@@ -49,8 +48,8 @@ public class MormonTrail {
         int jamesHealth = james.getCurrentHealth();
         
         
-        /*Map map = new Map();
-        map.setLocation(new Location(LocationType.TOWN, "TheMilePost"));
+        Map map = new Map();
+        map.setLocation(new Location(LocationType.town, "TheMilePost"));
         
         Event event1 = new Event();
         event1.setDescription("You've been bitten by a snake.");
@@ -62,7 +61,7 @@ public class MormonTrail {
         event3.setDescription("You fell and scraped your knee.");
         
         Event event4 = new Event();
-        event4.setDescription("You are hungry.");*/
+        event4.setDescription("You are hungry.");
         
         
         
@@ -88,7 +87,7 @@ public class MormonTrail {
         System.out.println(hotel.toString());
         
         Inventory inventory = new Inventory(InventoryItemType.Ox, 1300, 70);
-        ArrayList<Inventory> items = new ArrayList<Inventory>();
+        ArrayList<Inventory> items = new ArrayList<>();
         items.add(inventory);
         
         Scene store = new GeneralStoreScene(items, "Maybe they have a seniors' discount.");
