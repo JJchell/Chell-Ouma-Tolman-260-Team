@@ -5,6 +5,10 @@
  */
 package control;
 
+import model.Pace;
+import model.Rations;
+import model.Weather;
+
 /**
  *
  * @author scott
@@ -18,7 +22,16 @@ public class ComplexCalculations {
             return -1; // returning negative number as indication of invalid arguments
     }
     
-     public static int calcRiverSuccess(int weightOfWagon, int depthOfRiver, 
+    
+    /**
+     * calculating the chance of crossing a river successfully 
+     * @param weightOfWagon
+     * @param depthOfRiver
+     * @param randomNumber
+     * @param strenghtOfOxen
+     * @return 
+     */
+    public static int calcRiverSuccess(int weightOfWagon, int depthOfRiver, 
             int randomNumber, int strenghtOfOxen) {
         if (weightOfWagon > 13 && weightOfWagon < 33 && depthOfRiver > 12 &&
                 depthOfRiver < 48 && randomNumber > 1 && randomNumber < 25 &&
@@ -28,10 +41,45 @@ public class ComplexCalculations {
         else
             return -1; // returning negative number as indication of invalid arguments
     }
+    
+    public float calcDailyHealthDraw (float health, float stamina, Rations ration, Weather weather, Pace pace) {
+
+    // basic health draw for normal pace, normal rations, and good weather
+    float draw = 10;
+
+    // pace's effect on health
+    if (pace == Pace.SLOW)
+        draw -= 5;
+    else if (pace == Pace.FAST)
+        draw += 5;
+
+    // rations effect on draw
+    if (ration == Rations.MEAGER)
+        draw += 5;
+    else if (ration == Rations.FEAST)
+        draw -= 5;
+
+    // weather's effect on draw
+    if (weather == Weather.HOT || weather == Weather.COLD)
+        draw += 5;
+
+    // stamina's effect on draw
+    if (stamina <1 || stamina > 10)
+        return -1;
+    if (draw >= stamina)
+        draw -= stamina;
+    else
+        draw = 0;
+
+    // current health's effect on draw
+    if (health <= 0 || health > 100)
+        return -1;
+    draw *= ((health / 100) + 1);
+
+    return draw;
 }
-/**
- * calculating the chance of crossing a river successfully 
- */
+
+}
 
  
    
