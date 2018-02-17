@@ -120,7 +120,10 @@ public class Character implements Serializable {
 
     @Override
     public String toString() {
-        return "Character{" + "name=" + name + ", money=" + money + ", huntingSkill=" + huntingSkill + ", gatheringSkill=" + gatheringSkill + ", dailyStaminaDraw=" + dailyStaminaDraw + ", currentHealth=" + currentHealth + '}';
+        return "Character{" + "name=" + name + ", money=" + money 
+                + ", huntingSkill=" + huntingSkill + ", gatheringSkill=" 
+                + gatheringSkill + ", dailyStaminaDraw=" + dailyStaminaDraw 
+                + ", currentHealth=" + currentHealth + '}';
     }
     
     
