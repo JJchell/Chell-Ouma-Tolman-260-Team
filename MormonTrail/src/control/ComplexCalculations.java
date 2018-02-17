@@ -18,6 +18,11 @@ public class ComplexCalculations {
             return -1; // returning negative number as indication of invalid arguments
     }
     
+    /**
+ * James
+ * calculating the chance of crossing a river successfully 
+ */
+    
      public static int calcRiverSuccess(int weightOfWagon, int depthOfRiver, 
             int randomNumber, int strenghtOfOxen) {
         if (weightOfWagon > 13 && weightOfWagon < 33 && depthOfRiver > 12 &&
@@ -29,9 +34,7 @@ public class ComplexCalculations {
             return -1; // returning negative number as indication of invalid arguments
     }
 }
-/**
- * calculating the chance of crossing a river successfully 
- */
+
 
  
    

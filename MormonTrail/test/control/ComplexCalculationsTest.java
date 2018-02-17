@@ -164,7 +164,7 @@ public class ComplexCalculationsTest {
    }    
    @Test
    public void testCase4() {
-        //--Test 3--
+        //--Test 4--
         int weightOfWagon = 32;
         int depthOfRiver = 35;
         int randomNumber = 0;
@@ -176,7 +176,7 @@ public class ComplexCalculationsTest {
         
    @Test
    public void testCase5() {
-        //--Test 3--
+        //--Test 5--
         int weightOfWagon = 32;
         int depthOfRiver = 35;
         int randomNumber = 15;
@@ -188,7 +188,7 @@ public class ComplexCalculationsTest {
    
    @Test
    public void testCase6() {
-        //--Test 3--
+        //--Test 6--
         int weightOfWagon = 14;
         int depthOfRiver = 14;
         int randomNumber = 2;
@@ -200,7 +200,7 @@ public class ComplexCalculationsTest {
    
    @Test
    public void testCase7() {
-        //--Test 3--
+        //--Test 7--
         int weightOfWagon = 32;
         int depthOfRiver = 47;
         int randomNumber = 24;
