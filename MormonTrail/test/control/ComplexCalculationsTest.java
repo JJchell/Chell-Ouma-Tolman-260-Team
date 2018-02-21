@@ -305,6 +305,57 @@ public class ComplexCalculationsTest {
         //test to see if result returned equals the expected result
         assertEquals(expResult, result, 0.1);
     }
-   
+
+    /**
+     * Test of calcDayofRest method, of class ComplexCalculations.
+     */
+    @Test
+    public void testCalcDayofRest() {
+        System.out.println("calcDayofRest");
+        
+        // --Test Case 1--
+        // input variables
+        int stamina = 2;
+        int expResult = 3;
+        int result = ComplexCalculations.calcDayofRest(stamina);
+        assertEquals(expResult, result);
+        
+        // --Test Case 2--
+        // input variables
+        stamina = 4;
+        expResult = 2;
+        result = ComplexCalculations.calcDayofRest(stamina);
+        assertEquals(expResult, result);
+        
+        // --Test Case 3--
+        // input variables
+        stamina = 7;
+        expResult = 1;
+        result = ComplexCalculations.calcDayofRest(stamina);
+        assertEquals(expResult, result);
+        
+        // --Test Case 4--
+        // input variables
+        stamina = 9;
+        expResult = 1;
+        result = ComplexCalculations.calcDayofRest(stamina);
+        assertEquals(expResult, result);
+        
+        // --Test Case 5--
+        // input variables
+        stamina = 10;
+        expResult = 0;
+        result = ComplexCalculations.calcDayofRest(stamina);
+        assertEquals(expResult, result);
+        
+        // --Test Case 6--
+        // input variables
+        stamina = 11;
+        expResult = -1;
+        result = ComplexCalculations.calcDayofRest(stamina);
+        assertEquals(expResult, result);
+        
+        }
+    
     
 }
