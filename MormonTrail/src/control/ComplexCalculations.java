@@ -22,6 +22,7 @@ public class ComplexCalculations {
             return -1; // returning negative number as indication of invalid arguments
     }
     
+    
     /**
      * calculating the chance of crossing a river successfully 
      * @param weightOfWagon
@@ -77,8 +78,6 @@ public class ComplexCalculations {
 
     return draw;
 }
-
-
      /**
      * This formula calculates how many days of rest based on current stamina
      * Stamina must be a positive number, greater than or equal to 0 and less than or equal to 10  
@@ -100,7 +99,3 @@ public class ComplexCalculations {
             return -1; // returning a negative number as indication of invalid arguments
     }
 }
-
-
- 
-   
