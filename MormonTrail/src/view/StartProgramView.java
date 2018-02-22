@@ -38,28 +38,7 @@ public class StartProgramView {
         } while (endOfView != true);
     }
     
-    /*getInputs(): String[] {
-
-    inputs = new String array one element long
-    Display a description of the view
-
-    valid = false
-    WHILE valid == false (no input value has been enterd)
-
-    Display the prompt message - name 
-    Get the value entered from the keyboard
-    Trim off leading and trailing blanks from the value
-    IF length of the value < 1 then
-    Display "You must enter a non-blank value”
-    Continue (move to the top of the loop and repeat)
-    ENDIF
-    Assign the value to the fist position in the inputs array
-    valid = true (ends the loop)
-    ENDWHILE
-
-    RETURN inputs */
-
-    private String[] getInputs() {
+      private String[] getInputs() {
         String[] inputs = new String[1];
         
         System.out.println("Welcome to Mormon Trail.");
