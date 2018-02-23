@@ -5,7 +5,9 @@
  */
 package view;
 
+import control.GameControl;
 import java.util.Scanner;
+import model.Player;
 
 /**
  *
@@ -64,9 +66,33 @@ public class StartProgramView {
     }
 
     private Boolean doAction(String[] inputs) {
-        System.out.println("**** doAction() called ***");
-        System.out.println("\tinputs = " + inputs [0]);
+        String playerName = inputs[0];
+        Player player = GameControl.savePlayer(playerName);
+        
+        if (player == null) {
+            System.out.println("Could not create the player.\nEnter a different name.");
+            
+        return false; 
+        }
         
         return true;
     }
 }
+
+    /*doAction(inputs): boolean {
+        playersName = get the first value in the inputs array
+        player = savePlayer(playersName)
+        IF player == null
+         display “Could not create the player. “ +
+         “Enter a different name.”
+         RETURN false
+        ENDIF
+        DISPLAY "================================================= "
+         + "Welcome to the game " + playersName
+         + "We hope you have a lot of fun!”
+         + "================================================= "
+        mainMenuView = Create a new MainMenuView object
+        mainMenuView.displayMainMenuView()
+        RETURN true 
+    } */
+
