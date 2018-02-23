@@ -19,6 +19,7 @@ import model.Inventory;
 import model.Event;
 import model.Map;
 import model.LocationType;
+import model.Player;
 import view.StartProgramView;
 
 /**
@@ -32,6 +33,7 @@ public class MormonTrail {
      */
     public static void main(String[] args) {
         StartProgramView startProgramView = new StartProgramView();
-        startProgramView.displayStartProgramView();        
+        startProgramView.displayStartProgramView();  
+        public static Player player;
     }
 }
