@@ -8,6 +8,7 @@ package view;
 import control.GameControl;
 import java.util.Scanner;
 import model.Player;
+import view.MainMenuView;
 
 /**
  *
@@ -16,6 +17,7 @@ import model.Player;
 public class StartProgramView {
     public StartProgramView(){
     }
+   
     
     /*displayStartProgramView() {
         endOfView = false
@@ -70,11 +72,16 @@ public class StartProgramView {
         Player player = GameControl.savePlayer(playerName);
         
         if (player == null) {
-            System.out.println("Could not create the player.\nEnter a different name.");
-            
-        return false; 
+            System.out.println("Could not create the player.\nEnter a different name.");  
+            return false; 
         }
+         System.out.print("================================================= "
+         + "\nWelcome to the game " + playerName
+         + "\nWe hope you have a lot of fun!"
+         + "\n================================================= ");
         
+         MainMenuView mainMenuView = new MainMenuView(); 
+         mainMenuView.displayMainMenuView();
         return true;
     }
 }
