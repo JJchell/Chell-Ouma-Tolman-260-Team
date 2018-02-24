@@ -3,17 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package view;
 
 /**
  *
- * @author Ouma
+ * @author scott
  */
-public class Player {
-    String name; 
+public class StartExistingGameView {
     
-    public Player(String name){
-        this.name = name;
+    public void displayStartExistingGameView() {
+        System.out.println("displayStartExistingGameView() called");
     }
     
 }

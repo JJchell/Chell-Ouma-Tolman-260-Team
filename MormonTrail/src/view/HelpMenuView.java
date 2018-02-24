@@ -5,20 +5,15 @@
  */
 package view;
 
-import control.GameControl;
 import java.util.Scanner;
-import model.Game;
-import mormontrail.MormonTrail;
 
 /**
  *
- * @author Ouma
+ * @author scott
  */
-public class MainMenuView {
+public class HelpMenuView {
     
-    public MainMenuView(){}
-    
-    public void displayMainMenuView() {
+    public void displayHelpMenuView() {
         Boolean endOfView = false;
         do {
             String[] inputs = getInputs();
@@ -32,7 +27,12 @@ public class MainMenuView {
     
     private String[] getInputs() {
         String[] inputs = new String[1];
-        System.out.println("Main Menu Instructions.");
+        System.out.println("G - What is the goal of the game?\n"
+                + "M - How to move\n"
+                + "E - Extimate the number of resources\n"
+                + "H - Harvest resources\n"
+                + "D - Delivering resources to warehouse\n"
+                + "Q - Quit\n");
         Scanner scanner = new Scanner(System.in);
         boolean valid = false;
         while (valid == false) {
@@ -53,31 +53,46 @@ public class MainMenuView {
         String menuItem = inputs[0];
         menuItem = menuItem.toUpperCase();
         switch (menuItem) {
-            case "N": startNewGame();
+            case "G": displayGoalHelp();
                 break;
-            case "R": restartGame();
+            case "M": displayMoveHelp();
                 break;
-            case "H": getHelp();
+            case "E": displayResourceHelp();
                 break;
-            case "E": return true;
+            case "H": displayHarvestHelp();
+                break;
+            case "D": displayDeliveryHelp();
+                break;
+            case "RB": displayRedBullHelp();
+                break;
+            case "Q": return true;
             default: System.out.println("Invalid menu item");
         }
         return false;
     }
 
-    private void startNewGame() {
-        GameControl.createNewGame(MormonTrail.getPlayer());
-        GameMenuView gameMenuView = new GameMenuView();
-        gameMenuView.displayGameMenuView();
+    private void displayGoalHelp() {
+        System.out.println("displayGoalHelp() called");
     }
 
-    private void restartGame() {
-        StartExistingGameView startExistingGameView = new StartExistingGameView();
-        startExistingGameView.displayStartExistingGameView();
+    private void displayMoveHelp() {
+        System.out.println("displayMoveHelp() called");
     }
 
-    private void getHelp() {
-        HelpMenuView helpMenuView = new HelpMenuView();
-        helpMenuView.displayHelpMenuView();
+    private void displayResourceHelp() {
+        System.out.println("displayResourceHelp() called");
     }
+
+    private void displayHarvestHelp() {
+        System.out.println("displayHarvestHelp() called");
+    }
+
+    private void displayDeliveryHelp() {
+        System.out.println("displayDeliveryHelp() called");
+    }
+
+    private void displayRedBullHelp() {
+        System.out.println("You now have wings!");
+    }
+    
 }

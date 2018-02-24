@@ -42,7 +42,7 @@ public class StartProgramView {
         } while (endOfView != true);
     }
     
-      private String[] getInputs() {
+    private String[] getInputs() {
         String[] inputs = new String[1];
         
         System.out.println("Welcome to Mormon Trail.");
@@ -64,27 +64,7 @@ public class StartProgramView {
         }
             
         return inputs; 
-
     }
-
-    private Boolean doAction(String[] inputs) {
-        String playerName = inputs[0];
-        Player player = GameControl.savePlayer(playerName);
-        
-        if (player == null) {
-            System.out.println("Could not create the player.\nEnter a different name.");  
-            return false; 
-        }
-         System.out.print("================================================= "
-         + "\nWelcome to the game " + playerName
-         + "\nWe hope you have a lot of fun!"
-         + "\n================================================= ");
-        
-         MainMenuView mainMenuView = new MainMenuView(); 
-         mainMenuView.displayMainMenuView();
-        return true;
-    }
-}
 
     /*doAction(inputs): boolean {
         playersName = get the first value in the inputs array
@@ -102,4 +82,22 @@ public class StartProgramView {
         mainMenuView.displayMainMenuView()
         RETURN true 
     } */
+
+    private Boolean doAction(String[] inputs) {
+        String playerName = inputs[0];
+        Player player = GameControl.savePlayer(playerName);
+        if (player == null) {
+            System.out.println("Could not create the player.\nEnter a different name.");  
+            return false; 
+        }
+         System.out.print("================================================= "
+         + "\nWelcome to the game " + playerName
+         + "\nWe hope you have a lot of fun!"
+         + "\n================================================= ");
+        
+         MainMenuView mainMenuView = new MainMenuView(); 
+         mainMenuView.displayMainMenuView();
+        return true;
+    }
+}
 

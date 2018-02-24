@@ -17,6 +17,7 @@ import model.HotelScene;
 import model.GeneralStoreScene;
 import model.Inventory;
 import model.Event;
+import model.Game;
 import model.Map;
 import model.LocationType;
 import model.Player;
@@ -28,12 +29,31 @@ import view.StartProgramView;
  */
 public class MormonTrail {
 
+    private static Game currentGame = null;
+    private static Player player = null;
+    
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         StartProgramView startProgramView = new StartProgramView();
-        startProgramView.displayStartProgramView();  
-        public static Player player;
+        startProgramView.displayStartProgramView();
+    }
+    
+    public static Game getCurrentGame() {
+        return currentGame;
+    }
+    
+    public static void setCurrentGame(Game currentGame) {
+        MormonTrail.currentGame = currentGame;
+    }
+    
+    public static Player getPlayer() {
+        return player;
+    }
+    
+    public static void setPlayer(Player player) {
+        MormonTrail.player = player;
     }
 }
+

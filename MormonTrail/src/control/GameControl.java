@@ -5,10 +5,26 @@
  */
 package control;
 
+import model.Player;
+import mormontrail.MormonTrail;
+
 /**
  *
  * @author scott
  */
 public class GameControl {
+    
+    public static Player savePlayer(String playerName) {
+        if (playerName == null || playerName.length() < 1)
+            return null;
+        
+        Player player = new Player(playerName);
+        MormonTrail.setPlayer(player);
+        return player;
+    }
+    
+    public static void createNewGame(Player player) {
+        System.out.println("createNewGame() called");
+    }
     
 }

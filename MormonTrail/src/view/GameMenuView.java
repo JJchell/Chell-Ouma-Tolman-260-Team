@@ -3,17 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package view;
 
 /**
  *
- * @author Ouma
+ * @author scott
  */
-public class Player {
-    String name; 
+public class GameMenuView {
     
-    public Player(String name){
-        this.name = name;
+    public GameMenuView () {}
+
+    void displayGameMenuView() {
+        System.out.println("displayGameMenuView() called");
     }
     
 }
