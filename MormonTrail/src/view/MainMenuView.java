@@ -32,7 +32,13 @@ public class MainMenuView {
     
     private String[] getInputs() {
         String[] inputs = new String[1];
-        System.out.println("Main Menu Instructions.");
+        System.out.println("Main Menu"
+                + "\nPlease choose from one of the following options:"
+                + "\nN - Start new game"
+                + "\nR - Restart game"
+                + "\nH - Help"
+                + "\nP - Change pace"
+                + "\nE - Return to previous menu\n"); // remove change pace option after testing
         Scanner scanner = new Scanner(System.in);
         boolean valid = false;
         while (valid == false) {
@@ -59,6 +65,8 @@ public class MainMenuView {
                 break;
             case "H": getHelp();
                 break;
+            case "P": setPace(); //delete after testing
+                break;
             case "E": return true;
             default: System.out.println("Invalid menu item");
         }
@@ -79,5 +87,10 @@ public class MainMenuView {
     private void getHelp() {
         HelpMenuView helpMenuView = new HelpMenuView();
         helpMenuView.displayHelpMenuView();
+    }
+    
+    private void setPace() {
+        TeamPaceMenuView teamPaceMenuView = new TeamPaceMenuView();
+        teamPaceMenuView.displayTeamPaceMenuView();
     }
 }

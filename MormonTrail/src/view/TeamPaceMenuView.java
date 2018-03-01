@@ -6,14 +6,19 @@
 package view;
 
 import java.util.Scanner;
+import model.Game;
+import model.Pace;
+import mormontrail.MormonTrail;
 
 /**
  *
  * @author scott
  */
-public class HelpMenuView {
+public class TeamPaceMenuView {
     
-    public void displayHelpMenuView() {
+    public TeamPaceMenuView(){}
+    
+    public void displayTeamPaceMenuView() {
         Boolean endOfView = false;
         do {
             String[] inputs = getInputs();
@@ -27,12 +32,11 @@ public class HelpMenuView {
     
     private String[] getInputs() {
         String[] inputs = new String[1];
-        System.out.println("G - What is the goal of the game?\n"
-                + "M - How to move\n"
-                + "E - Estimate the number of resources\n"
-                + "H - Harvest resources\n"
-                + "D - Delivering resources to warehouse\n"
-                + "Q - Quit\n");
+        System.out.println("Select Team Pace:"
+                + "\nS - Slow"
+                + "\nA - Average"
+                + "\nF - Fast"
+                + "\nQ - Return to previous menu\n");
         Scanner scanner = new Scanner(System.in);
         boolean valid = false;
         while (valid == false) {
@@ -53,46 +57,23 @@ public class HelpMenuView {
         String menuItem = inputs[0];
         menuItem = menuItem.toUpperCase();
         switch (menuItem) {
-            case "G": displayGoalHelp();
+            case "S": changePace("Slow");
                 break;
-            case "M": displayMoveHelp();
+            case "A": changePace("Average");
                 break;
-            case "E": displayResourceHelp();
-                break;
-            case "H": displayHarvestHelp();
-                break;
-            case "D": displayDeliveryHelp();
-                break;
-            case "RB": displayRedBullHelp();
+            case "F": changePace("Fast");
                 break;
             case "Q": return true;
-            default: System.out.println("Invalid menu item");
+            default: System.out.println("Invalid pace option.");
         }
         return false;
     }
 
-    private void displayGoalHelp() {
-        System.out.println("displayGoalHelp() called");
+    private void changePace(String pace) {
+        //Game game = MormonTrail.getCurrentGame();
+        //game.setPace(pace);
+        
+        System.out.println("\n*** Pace set to " + pace + " ***\n");
     }
-
-    private void displayMoveHelp() {
-        System.out.println("displayMoveHelp() called");
-    }
-
-    private void displayResourceHelp() {
-        System.out.println("displayResourceHelp() called");
-    }
-
-    private void displayHarvestHelp() {
-        System.out.println("displayHarvestHelp() called");
-    }
-
-    private void displayDeliveryHelp() {
-        System.out.println("displayDeliveryHelp() called");
-    }
-
-    private void displayRedBullHelp() {
-        System.out.println("You now have wings!");
-    }
-    
 }
+

@@ -14,7 +14,7 @@ import java.io.Serializable;
 public class Game implements Serializable {
     
     private int daysOnTrail;
-    private int pace;
+    private Pace pace;
     private int milesTraveled;
     private int currentMoneyBalance;
 
@@ -26,11 +26,11 @@ public class Game implements Serializable {
         this.daysOnTrail = daysOnTrail;
     }
 
-    public int getPace() {
+    public Pace getPace() {
         return pace;
     }
 
-    public void setPace(int pace) {
+    public void setPace(Pace pace) {
         this.pace = pace;
     }
 
@@ -54,7 +54,6 @@ public class Game implements Serializable {
     public int hashCode() {
         int hash = 7;
         hash = 29 * hash + this.daysOnTrail;
-        hash = 29 * hash + this.pace;
         hash = 29 * hash + this.milesTraveled;
         hash = 29 * hash + this.currentMoneyBalance;
         return hash;
