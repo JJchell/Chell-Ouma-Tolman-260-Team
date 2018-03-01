@@ -38,7 +38,7 @@ public class MainMenuView {
                 + "\nR - Restart game"
                 + "\nH - Help"
                 + "\nP - Change pace"
-                + "\nR - River Crossing"
+                + "\nC - River Crossing"
                 + "\nE - Return to previous menu\n"); // remove change pace option after testing
         Scanner scanner = new Scanner(System.in);
         boolean valid = false;
