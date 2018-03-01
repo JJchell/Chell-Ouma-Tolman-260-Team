@@ -23,6 +23,7 @@ import model.LocationType;
 import model.Player;
 import view.StartProgramView;
 import view.InitializeMapView;
+import view.FortSceneView;
 
 
 /**
