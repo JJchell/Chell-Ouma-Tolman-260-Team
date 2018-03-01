@@ -22,6 +22,8 @@ import model.Map;
 import model.LocationType;
 import model.Player;
 import view.StartProgramView;
+import view.InitializeMapView;
+
 
 /**
  *

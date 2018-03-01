@@ -27,4 +27,10 @@ public class GameControl {
         System.out.println("createNewGame() called");
     }
     
+    public static void initializeMap() {
+        System.out.println("initializeMap() called");
+    }
 }
+
+
+
