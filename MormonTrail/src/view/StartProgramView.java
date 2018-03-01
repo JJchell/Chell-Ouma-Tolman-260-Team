@@ -5,6 +5,11 @@
  */
 package view;
 
+import control.GameControl;
+import java.util.Scanner;
+import model.Player;
+import view.MainMenuView;
+
 /**
  *
  * @author scott
@@ -12,6 +17,7 @@ package view;
 public class StartProgramView {
     public StartProgramView(){
     }
+   
     
     /*displayStartProgramView() {
         endOfView = false
@@ -20,7 +26,7 @@ public class StartProgramView {
             IF no inputs were entered OR the first input is Q
                 RETURN
             ENDIF
-            endOfView = doAction(inputs)
+            endOfView = doAction(inputs)"stub
         WHILE endOfView != true
     }*/
     
@@ -35,12 +41,63 @@ public class StartProgramView {
             endOfView = doAction(inputs);
         } while (endOfView != true);
     }
-
+    
     private String[] getInputs() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String[] inputs = new String[1];
+        
+        System.out.println("Welcome to Mormon Trail.");
+        
+        Scanner scanner = new Scanner(System.in);
+              
+        
+        boolean valid = false;
+        while (valid == false) {
+            System.out.println("Name: ");
+            String sentence = scanner.nextLine();
+            sentence = sentence.trim();
+            if (sentence.length() < 1) {
+                System.out.println("\"You must enter a non-blank value\"");
+                continue;
+            }
+            inputs[0] = sentence; 
+            valid = true;         
+        }
+            
+        return inputs; 
     }
+
+    /*doAction(inputs): boolean {
+        playersName = get the first value in the inputs array
+        player = savePlayer(playersName)
+        IF player == null
+         display “Could not create the player. “ +
+         “Enter a different name.”
+         RETURN false
+        ENDIF
+        DISPLAY "================================================= "
+         + "Welcome to the game " + playersName
+         + "We hope you have a lot of fun!”
+         + "================================================= "
+        mainMenuView = Create a new MainMenuView object
+        mainMenuView.displayMainMenuView()
+        RETURN true 
+    } */
 
     private Boolean doAction(String[] inputs) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String playerName = inputs[0];
+        Player player = GameControl.savePlayer(playerName);
+        if (player == null) {
+            System.out.println("Could not create the player.\nEnter a different name.");  
+            return false; 
+        }
+         System.out.print("================================================= "
+         + "\nWelcome to the game " + playerName
+         + "\nWe hope you have a lot of fun!"
+         + "\n================================================= ");
+        
+         MainMenuView mainMenuView = new MainMenuView(); 
+         mainMenuView.displayMainMenuView();
+        return true;
     }
 }
+

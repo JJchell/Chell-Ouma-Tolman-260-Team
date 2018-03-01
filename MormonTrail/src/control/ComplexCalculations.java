@@ -98,4 +98,5 @@ public class ComplexCalculations {
         else
             return -1; // returning a negative number as indication of invalid arguments
     }
+
 }
