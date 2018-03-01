@@ -38,6 +38,7 @@ public class MainMenuView {
                 + "\nR - Restart game"
                 + "\nH - Help"
                 + "\nP - Change pace"
+                + "\nR - River Crossing"
                 + "\nE - Return to previous menu\n"); // remove change pace option after testing
         Scanner scanner = new Scanner(System.in);
         boolean valid = false;
@@ -67,6 +68,8 @@ public class MainMenuView {
                 break;
             case "P": setPace(); //delete after testing
                 break;
+            case "C": riverCrossing(); //delete after testing
+                break;
             case "E": return true;
             default: System.out.println("Invalid menu item");
         }
@@ -92,5 +95,10 @@ public class MainMenuView {
     private void setPace() {
         TeamPaceMenuView teamPaceMenuView = new TeamPaceMenuView();
         teamPaceMenuView.displayTeamPaceMenuView();
+    }
+    
+    private void riverCrossing() {
+        RiverCrossingSceneMenuView riverCrossingSceneMenuView = new RiverCrossingSceneMenuView();
+        riverCrossingSceneMenuView.displayRiverCrossingSceneMenuView();
     }
 }
