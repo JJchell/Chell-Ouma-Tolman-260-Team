@@ -30,10 +30,10 @@ public class StartProgramView {
         WHILE endOfView != true
     }*/
     
-    public void displayStartProgramView() {
+    public void display() {
         Boolean endOfView = false;
         do {
-            String[] inputs = getInputs();
+            String[] inputs = getInput();
             String inp1 = inputs[0].toUpperCase();
             if (inputs == null || "Q".equals(inp1)) {
                 return;
@@ -42,7 +42,7 @@ public class StartProgramView {
         } while (endOfView != true);
     }
     
-    private String[] getInputs() {
+    private String[] getInput() {
         String[] inputs = new String[1];
         
         System.out.println("Welcome to Mormon Trail.");
@@ -96,7 +96,7 @@ public class StartProgramView {
          + "\n================================================= ");
         
          MainMenuView mainMenuView = new MainMenuView(); 
-         mainMenuView.displayMainMenuView();
+         mainMenuView.display();
         return true;
     }
 }

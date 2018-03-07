@@ -138,7 +138,8 @@ public class ComplexCalculationsTest {
         int randomNumber = 15;
         int strenghtOfOxen = 39;
         int expResult = 43;
-        int result = ComplexCalculations.calcRiverSuccess(weightOfWagon, depthOfRiver, randomNumber, strenghtOfOxen);
+        int result = ComplexCalculations.calcRiverSuccess(weightOfWagon, 
+                depthOfRiver, randomNumber, strenghtOfOxen);
         assertEquals(expResult, result);
     }
 
@@ -150,7 +151,8 @@ public class ComplexCalculationsTest {
         int randomNumber = 15;
         int strenghtOfOxen = 39;
         int expResult = -1;
-        int result = ComplexCalculations.calcRiverSuccess(weightOfWagon, depthOfRiver, randomNumber, strenghtOfOxen);
+        int result = ComplexCalculations.calcRiverSuccess(weightOfWagon, 
+                depthOfRiver, randomNumber, strenghtOfOxen);
         assertEquals(expResult, result);
    } 
    
@@ -162,9 +164,11 @@ public class ComplexCalculationsTest {
         int randomNumber = 15;
         int strenghtOfOxen = 39;
         int expResult = -1;
-        int result = ComplexCalculations.calcRiverSuccess(weightOfWagon, depthOfRiver, randomNumber, strenghtOfOxen);
+        int result = ComplexCalculations.calcRiverSuccess(weightOfWagon, 
+                depthOfRiver, randomNumber, strenghtOfOxen);
         assertEquals(expResult, result);
-   }    
+   } 
+   
    @Test
    public void testCase4() {
         //--Test 4--
@@ -173,7 +177,8 @@ public class ComplexCalculationsTest {
         int randomNumber = 0;
         int strenghtOfOxen = 39;
         int expResult = -1;
-        int result = ComplexCalculations.calcRiverSuccess(weightOfWagon, depthOfRiver, randomNumber, strenghtOfOxen);
+        int result = ComplexCalculations.calcRiverSuccess(weightOfWagon, 
+                depthOfRiver, randomNumber, strenghtOfOxen);
         assertEquals(expResult, result);
    } 
         
@@ -185,7 +190,8 @@ public class ComplexCalculationsTest {
         int randomNumber = 15;
         int strenghtOfOxen = 50;
         int expResult = -1;
-        int result = ComplexCalculations.calcRiverSuccess(weightOfWagon, depthOfRiver, randomNumber, strenghtOfOxen);
+        int result = ComplexCalculations.calcRiverSuccess(weightOfWagon, 
+                depthOfRiver, randomNumber, strenghtOfOxen);
         assertEquals(expResult, result);
    } 
    
@@ -197,7 +203,8 @@ public class ComplexCalculationsTest {
         int randomNumber = 2;
         int strenghtOfOxen = 2;
         int expResult = 28;
-        int result = ComplexCalculations.calcRiverSuccess(weightOfWagon, depthOfRiver, randomNumber, strenghtOfOxen);
+        int result = ComplexCalculations.calcRiverSuccess(weightOfWagon, 
+                depthOfRiver, randomNumber, strenghtOfOxen);
         assertEquals(expResult, result);
    } 
    
@@ -209,7 +216,8 @@ public class ComplexCalculationsTest {
         int randomNumber = 24;
         int strenghtOfOxen = 39;
         int expResult = 64;
-        int result = ComplexCalculations.calcRiverSuccess(weightOfWagon, depthOfRiver, randomNumber, strenghtOfOxen);
+        int result = ComplexCalculations.calcRiverSuccess(weightOfWagon, 
+                depthOfRiver, randomNumber, strenghtOfOxen);
         assertEquals(expResult, result);
    } 
 

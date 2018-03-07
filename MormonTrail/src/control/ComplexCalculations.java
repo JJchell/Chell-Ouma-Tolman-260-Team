@@ -24,7 +24,9 @@ public class ComplexCalculations {
     
     
     /**
-     * calculating the chance of crossing a river successfully 
+     * This formula calculates the chance of crossing a river successfully,
+     * based on the following criteria weight of wagon, depth of river, strength 
+     * of oxen and a random number
      * @param weightOfWagon
      * @param depthOfRiver
      * @param randomNumber
@@ -34,8 +36,8 @@ public class ComplexCalculations {
     public static int calcRiverSuccess(int weightOfWagon, int depthOfRiver, 
             int randomNumber, int strenghtOfOxen) {
         if (weightOfWagon > 13 && weightOfWagon < 33 && depthOfRiver > 12 &&
-                depthOfRiver < 48 && randomNumber > 1 && randomNumber < 25 &&
-                strenghtOfOxen > 1 && strenghtOfOxen < 40) {
+            depthOfRiver < 48 && randomNumber > 1 && randomNumber < 25 &&
+            strenghtOfOxen > 1 && strenghtOfOxen < 40) {
             return (weightOfWagon + depthOfRiver + randomNumber) - strenghtOfOxen;
         }
         else
