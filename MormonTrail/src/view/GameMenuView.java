@@ -81,7 +81,7 @@ public class GameMenuView {
 
     private void setTeamPace() {
         TeamPaceMenuView view =new TeamPaceMenuView();
-        view.displayTeamPaceMenuView();
+        view.display();
     }
 
     private void viewGameMap() {
@@ -90,7 +90,7 @@ public class GameMenuView {
 
     private void displayHelpMenu() {
         HelpMenuView view = new HelpMenuView();
-        view.displayHelpMenuView();
+        view.display();
     }
     
 }
