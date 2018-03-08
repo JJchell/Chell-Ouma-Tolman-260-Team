@@ -61,16 +61,16 @@ public class MainMenuView extends View {
 
     private void getHelp() {
         HelpMenuView helpMenuView = new HelpMenuView();
-        helpMenuView.displayHelpMenuView();
+        helpMenuView.display();
     }
     
     private void setPace() {
         TeamPaceMenuView teamPaceMenuView = new TeamPaceMenuView();
-        teamPaceMenuView.displayTeamPaceMenuView();
+        teamPaceMenuView.display();
     }
     
     private void riverCrossing() {
         RiverCrossingSceneMenuView riverCrossingSceneMenuView = new RiverCrossingSceneMenuView();
-        riverCrossingSceneMenuView.displayRiverCrossingSceneMenuView();
+        riverCrossingSceneMenuView.display();
     }
 }

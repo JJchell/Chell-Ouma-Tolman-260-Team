@@ -36,7 +36,7 @@ public abstract class View implements ViewInterface {
         } while (endOfView != true);
     }
     
-    
+    @Override
     public String getInput() {
         
         Scanner keyboard = new Scanner(System.in);
@@ -58,5 +58,6 @@ public abstract class View implements ViewInterface {
         return value; 
     }
     
+    @Override
     public abstract boolean doAction(String input);
 }

@@ -11,48 +11,21 @@ import java.util.Scanner;
  *
  * @author Ouma
  */
-public class InitializeMapView {
+public class InitializeMapView extends View{
     
-     public void displayInitializeMapView() {
-        boolean endOfView = false;
-        do {
-            String[] inputs = getInputs();
-            String inp1 = inputs[0].toUpperCase();
-            if (inputs == null || "Q".equals(inp1)) {
-                return;
-            }
-            endOfView = doAction(inputs);
-        } while (endOfView != true);
-    
-}
-     
-private String[] getInputs() {
-        String[] inputs = new String[1];
-        System.out.println("HS - Visit Hotel Scene\n"
+     public InitializeMapView() {
+        super(    "HS - Visit Hotel Scene\n"
                 + "FS - Visit Fort Scene\n"
                 + "GS - Visit General Store\n"
                 + "TS - Visit Town Scene\n"
                 + "RC - Visit River Crossing\n"
                 + "DT - Visit Daily Trail Stop\n"
                 + "Q - Quit\n");
-        Scanner scanner = new Scanner(System.in);
-        boolean valid = false;
-        while (valid == false) {
-            System.out.println("Choice: ");
-            String sentence = scanner.nextLine();
-            sentence = sentence.trim();
-            if (sentence.length() < 1) {
-                System.out.println("\"You must specify where you'd like to visit\"");
-                continue;
-            }
-            inputs[0] = sentence; 
-            valid = true;         
-        }
-        return inputs; 
     }
     
-    public boolean doAction(String[] inputs) {
-        String choice = inputs[0];
+    @Override
+    public boolean doAction(String inputs) {
+        String choice = inputs;
         choice = choice.toUpperCase();
         switch (choice) {
             case "HS": displayVisitHotelScene();
