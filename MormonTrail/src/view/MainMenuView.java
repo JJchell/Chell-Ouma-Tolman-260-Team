@@ -56,8 +56,6 @@ public class MainMenuView {
         return inputs; 
     }
     
-    //comment 
-    
     private Boolean doAction(String[] inputs) {
         String menuItem = inputs[0];
         menuItem = menuItem.toUpperCase();
