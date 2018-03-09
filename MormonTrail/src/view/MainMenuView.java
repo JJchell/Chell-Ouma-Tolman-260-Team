@@ -22,7 +22,7 @@ public class MainMenuView extends View {
                 + "\nN - Start new game" 
                 + "\nR - Restart game" 
                 + "\nH - Help" 
-                + "\nP - Change pace" 
+                + "\nG - Game Play Menu" 
                 + "\nC - River Crossing"
                 + "\nM - Initialize Map"
                 + "\nF - Fort Scene"
@@ -40,7 +40,7 @@ public class MainMenuView extends View {
                 break;
             case "H": getHelp();
                 break;
-            case "P": setPace(); //delete after testing
+            case "G": gamePlayMenu(); //delete after testing
                 break;
             case "C": riverCrossing(); //delete after testing
                 break;
@@ -88,5 +88,10 @@ public class MainMenuView extends View {
     private void fortScene() {
         FortSceneView fortSceneView = new FortSceneView();
         fortSceneView.display();
+    }
+    
+    private void gamePlayMenu() {
+        GamePlayMenuView gamePlayMenuView = new GamePlayMenuView();
+        gamePlayMenuView.display();
     }
 }
