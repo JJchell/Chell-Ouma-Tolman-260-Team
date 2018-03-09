@@ -51,7 +51,7 @@ public class MainMenuView extends View {
     private void startNewGame() {
         GameControl.createNewGame(MormonTrail.getPlayer());
         GameMenuView gameMenuView = new GameMenuView();
-        gameMenuView.displayGameMenuView();
+        gameMenuView.display();
     }
 
     private void restartGame() {

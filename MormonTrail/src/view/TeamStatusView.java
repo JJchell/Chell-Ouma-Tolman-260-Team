@@ -11,47 +11,19 @@ import java.util.Scanner;
  *
  * @author TheChells
  */
-public class TeamStatusView {
+public class TeamStatusView extends View{
     
     //this view has the following save report to a file, quite or retun to the previous menue
     
     
-    public void displayTeamStatusView() {
-        Boolean endOfView = false;
-        System.out.println("some day soon the team status will be here");
-        do {
-            String[] inputs = getInputs();
-            String inp1 = inputs[0].toUpperCase();
-            if (inputs == null || "Q".equals(inp1)) {
-                return;
-            }
-            endOfView = doAction(inputs);
-        } while (endOfView != true);
-    }
-    
-    private String[] getInputs() {
-        String[] inputs = new String[1];
-        System.out.println(
-                  "R - report to a file\n"
+    public TeamStatusView() {
+        super("R - report to a file\n"
                 + "Q - Quit\n");
-        Scanner scanner = new Scanner(System.in);
-        boolean valid = false;
-        while (valid == false) {
-            System.out.println("Choice: ");
-            String sentence = scanner.nextLine();
-            sentence = sentence.trim();
-            if (sentence.length() < 1) {
-                System.out.println("\"You must specify a value\"");
-                continue;
-            }
-            inputs[0] = sentence; 
-            valid = true;         
-        }
-        return inputs; 
     }
     
-    private Boolean doAction(String[] inputs) {
-        String menuItem = inputs[0];
+    @Override
+    public boolean doAction(String inputs) {
+        String menuItem = inputs;
         menuItem = menuItem.toUpperCase();
         if (menuItem.equals("R")){
             saveReport();
