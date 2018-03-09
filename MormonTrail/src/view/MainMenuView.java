@@ -24,6 +24,8 @@ public class MainMenuView extends View {
                 + "\nH - Help" 
                 + "\nP - Change pace" 
                 + "\nC - River Crossing"
+                + "\nM - Initialize Map"
+                + "\nF - Fort Scene"
                 + "\nE - Return to previous menu");
     }
     
@@ -41,6 +43,10 @@ public class MainMenuView extends View {
             case "P": setPace(); //delete after testing
                 break;
             case "C": riverCrossing(); //delete after testing
+                break;
+            case "M": mapView(); 
+                break;
+            case "F": fortScene(); 
                 break;
             case "E": return true;
             default: System.out.println("Invalid menu item");
@@ -72,5 +78,15 @@ public class MainMenuView extends View {
     private void riverCrossing() {
         RiverCrossingSceneMenuView riverCrossingSceneMenuView = new RiverCrossingSceneMenuView();
         riverCrossingSceneMenuView.display();
+    }
+    
+    private void mapView() {
+        InitializeMapView initializeMapView = new InitializeMapView();
+        initializeMapView.display();
+    }
+    
+    private void fortScene() {
+        FortSceneView fortSceneView = new FortSceneView();
+        fortSceneView.display();
     }
 }
