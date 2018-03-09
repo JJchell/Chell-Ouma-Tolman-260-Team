@@ -11,46 +11,18 @@ import java.util.Scanner;
  *
  * @author Ouma
  */
-public class FortSceneView {
+public class FortSceneView extends View{
     
-    public FortSceneView(){}
-    
-    public void displayFortSceneView() {
-        boolean endOfView = false;
-        do {
-            String[] inputs = getInputs();
-            String inp1 = inputs[0].toUpperCase();
-            if (inputs == null || "Q".equals(inp1)) {
-                return;
-            }
-            endOfView = doAction(inputs);
-        } while (endOfView != true);
-    }
-    
-    private String[] getInputs() {
-        String[] inputs = new String[1];
-        System.out.println("Welcome to the Fort. Choose one of the following:"
+    public FortSceneView(){
+        super("Welcome to the Fort. Choose one of the following:"
                 + "DP - Dance party.\n"
                 + "GA - Get advice.\n"
                 + "Q - Quit\n");
-        Scanner scanner = new Scanner(System.in);
-        boolean valid = false;
-        while (valid == false) {
-            System.out.println("Choice: ");
-            String sentence = scanner.nextLine();
-            sentence = sentence.trim();
-            if (sentence.length() < 1) {
-                System.out.println("\"You must specify what you'd like to do.\"");
-                continue;
-            }
-            inputs[0] = sentence; 
-            valid = true;         
-        }
-        return inputs; 
     }
     
-    private Boolean doAction(String[] inputs) {
-        String menuItem = inputs[0];
+    @Override
+    public boolean doAction(String inputs) {
+        String menuItem = inputs;
         menuItem = menuItem.toUpperCase();
         switch (menuItem) {
             case "DP": displayDanceParty();
