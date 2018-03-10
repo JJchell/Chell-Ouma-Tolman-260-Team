@@ -25,6 +25,7 @@ public class MainMenuView extends View {
                 + "\nG - Game Play Menu" 
                 + "\nC - River Crossing"
                 + "\nM - Initialize Map"
+                + "\nGM - Game Map"
                 + "\nF - Fort Scene"
                 + "\nE - Return to previous menu");
     }
@@ -45,6 +46,8 @@ public class MainMenuView extends View {
             case "C": riverCrossing(); //delete after testing
                 break;
             case "M": mapView(); 
+                break;
+             case "GM": gameMapView(); 
                 break;
             case "F": fortScene(); 
                 break;
@@ -83,6 +86,11 @@ public class MainMenuView extends View {
     private void mapView() {
         InitializeMapView initializeMapView = new InitializeMapView();
         initializeMapView.display();
+    }
+    
+    private void gameMapView() {
+        DisplayMapView displayMapView = new DisplayMapView();
+        displayMapView.display();
     }
     
     private void fortScene() {
