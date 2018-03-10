@@ -51,6 +51,8 @@ public class MainMenuView extends View {
                 break;
             case "F": fortScene(); 
                 break;
+            case "GH": huntingSceneView();
+                break;
             case "E": return true;
             default: System.out.println("Invalid menu item");
         }
@@ -102,4 +104,10 @@ public class MainMenuView extends View {
         GamePlayMenuView gamePlayMenuView = new GamePlayMenuView();
         gamePlayMenuView.display();
     }
+
+    private void huntingSceneView() {
+        HuntingSceneView huntingSceneView = new HuntingSceneView();
+        huntingSceneView.display();
+    }
 }
+        
