@@ -27,6 +27,7 @@ public class MainMenuView extends View {
                 + "\nM - Initialize Map"
                 + "\nGM - Game Map"
                 + "\nF - Fort Scene"
+                + "\nGH - Hunting Scene"
                 + "\nE - Return to previous menu");
     }
     
