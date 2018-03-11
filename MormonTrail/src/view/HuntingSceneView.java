@@ -19,13 +19,14 @@ public class HuntingSceneView extends View{
                + "Q - Quit.\n");    
         }
     
-     @Override
+    
+    @Override
     public boolean doAction(String inputs) {
         String menuItem = inputs;
         menuItem = menuItem.toUpperCase();
         switch (menuItem) {
             case "Y":
-                huntSuccess();
+                huntNow();
                 break;
             case "Q":
                 return true;
@@ -36,7 +37,7 @@ public class HuntingSceneView extends View{
         return false;
     }
 
-    private void huntSuccess() {
+    private void huntNow() {
         System.out.println("huntSuccess() called");
     }    
 }
