@@ -15,22 +15,22 @@ import java.util.Objects;
  */
 public class HotelScene extends Scene  implements Serializable{
     
-    private ArrayList<Character> characters;
+    private ArrayList<Characters> characters;
     
     public HotelScene(String Description) {
         super(Description);
     }
 
-    public HotelScene(ArrayList<Character> characters, String Description) {
+    public HotelScene(ArrayList<Characters> characters, String Description) {
         super(Description);
         this.characters = characters;
     }
 
-    public ArrayList<Character> getCharacters() {
+    public ArrayList<Characters> getCharacters() {
         return characters;
     }
 
-    public void setCharacters(ArrayList<Character> characters) {
+    public void setCharacters(ArrayList<Characters> characters) {
         this.characters = characters;
     }
 

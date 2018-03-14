@@ -16,7 +16,7 @@ public class Inventory implements Serializable{
     
     InventoryItemType item;
     int currentyWeight;
-    int currentStrength;
+    int currentStrength; // need to fix this
 
     public Inventory() {
     }    

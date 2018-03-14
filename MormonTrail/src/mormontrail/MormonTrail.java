@@ -6,7 +6,7 @@
 package mormontrail;
 
 import java.util.ArrayList;
-import model.Character;
+import model.Characters;
 import model.InventoryItemType;
 import model.Scene;
 import model.RiverCrossingScene;

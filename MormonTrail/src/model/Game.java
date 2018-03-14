@@ -6,6 +6,7 @@
 package model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  *
@@ -13,10 +14,34 @@ import java.io.Serializable;
  */
 public class Game implements Serializable {
     
+    private Player player;
     private int daysOnTrail;
     private Pace pace;
     private int milesTraveled;
     private int currentMoneyBalance;
+    private Characters mainCharacter;
+    private ArrayList<Characters> characters;
+    private ArrayList<Inventory> inventory;
+    private ArrayList<Map> map;
+    
+    
+    public Game() {}
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
+    public Characters getMainCharacter() {
+        return mainCharacter;
+    }
+
+    public void setMainCharacter(Characters mainCharacter) {
+        this.mainCharacter = mainCharacter;
+    }
 
     public int getDaysOnTrail() {
         return daysOnTrail;

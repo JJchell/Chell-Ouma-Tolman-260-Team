@@ -12,7 +12,7 @@ import java.util.Objects;
  *
  * @author scott
  */
-public class Character implements Serializable {
+public class Characters implements Serializable {
     
     private String name;
     private int money;
@@ -21,8 +21,17 @@ public class Character implements Serializable {
     private int dailyStaminaDraw;
     private int currentHealth;
 
-    public Character() {
+    public Characters() {
     } 
+    
+    public Characters(String name, int money, int huntingSkill, int gatheringSkill, int dailyStaminaDraw, int currentHealth) {
+        this.name = name;
+        this.money = money;
+        this.huntingSkill = huntingSkill;
+        this.gatheringSkill = gatheringSkill;
+        this.dailyStaminaDraw = dailyStaminaDraw;
+        this.currentHealth = currentHealth;
+    }
     
 
     public String getName() {
@@ -96,7 +105,7 @@ public class Character implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Character other = (Character) obj;
+        final Characters other = (Characters) obj;
         if (this.money != other.money) {
             return false;
         }

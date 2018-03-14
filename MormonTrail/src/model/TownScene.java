@@ -16,14 +16,14 @@ import java.util.Objects;
 public class TownScene extends FortScene  implements Serializable{
     
     private String townName;
-    private ArrayList<Character> characters;
+    private ArrayList<Characters> characters;
     
     
     public TownScene(String Description) {
         super(Description);
     }
 
-    public TownScene(ArrayList<Character> characters, String Description) {
+    public TownScene(ArrayList<Characters> characters, String Description) {
         super(Description);
         this.characters = characters;
     }
@@ -32,7 +32,7 @@ public class TownScene extends FortScene  implements Serializable{
         return townName;
     }
 
-    public ArrayList<Character> getCharacters() {
+    public ArrayList<Characters> getCharacters() {
         return characters;
     }
 
@@ -40,7 +40,7 @@ public class TownScene extends FortScene  implements Serializable{
         this.townName = townName;
     }
 
-    public void setCharacters(ArrayList<Character> characters) {
+    public void setCharacters(ArrayList<Characters> characters) {
         this.characters = characters;
     }
 

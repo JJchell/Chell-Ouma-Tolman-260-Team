@@ -14,6 +14,7 @@ import javax.xml.stream.Location;//delete this after Location is implemented
  * @author Ouma
  */
 public class Map implements Serializable {
+    
     private Location currentLocation;
 
     public Map(Location currentLocation) {
