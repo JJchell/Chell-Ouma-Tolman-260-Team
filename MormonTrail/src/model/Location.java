@@ -14,11 +14,27 @@ import java.util.Objects;
  */
 public class Location implements Serializable{
     
+    private String name;
     private String type;
     private int milepost;
 
+    
     public Location() {
     
+    }
+
+    public Location(String name, String type, int milepost) {
+        this.name = name;
+        this.type = type;
+        this.milepost = milepost;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
     }
     
     public String getType() {

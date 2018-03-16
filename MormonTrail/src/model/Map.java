@@ -6,7 +6,7 @@
 package model;
 
 import java.io.Serializable;
-import javax.xml.stream.Location;//delete this after Location is implemented
+import java.util.ArrayList;
 
 
 /**
@@ -15,20 +15,27 @@ import javax.xml.stream.Location;//delete this after Location is implemented
  */
 public class Map implements Serializable {
     
+    private ArrayList<Location> locations;
     private Location currentLocation;
 
-    public Map(Location currentLocation) {
-        this.currentLocation = currentLocation;
-    }
+    
 
     public Map() {
     }
 
-    public Location getCurrentLocation() {
-        return currentLocation;
+    public void setLocations(ArrayList<Location> locations) {
+        this.locations = locations;
     }
 
     public void setCurrentLocation(Location currentLocation) {
         this.currentLocation = currentLocation;
+    }
+
+    public ArrayList<Location> getLocations() {
+        return locations;
+    }
+
+    public Location getCurrentLocation() {
+        return currentLocation;
     }
 }

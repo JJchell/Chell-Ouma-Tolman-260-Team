@@ -22,10 +22,52 @@ public class Game implements Serializable {
     private Characters mainCharacter;
     private ArrayList<Characters> characters;
     private ArrayList<Inventory> inventory;
-    private ArrayList<Map> map;
+    private Map map;
+    private Map visited;
+    private Map toVisit;
     
     
     public Game() {}
+    
+    public ArrayList<Characters> getCharacters() {
+        return characters;
+    }
+    
+    public void setCharacters(ArrayList<Characters> characters) {
+        this.characters = characters;
+    }
+
+    public void setInventory(ArrayList<Inventory> inventory) {
+        this.inventory = inventory;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
+
+    public void setVisited(Map visited) {
+        this.visited = visited;
+    }
+
+    public void setToVisit(Map toVisit) {
+        this.toVisit = toVisit;
+    }
+
+    public Map getMap() {
+        return map;
+    }
+
+    public Map getVisited() {
+        return visited;
+    }
+
+    public Map getToVisit() {
+        return toVisit;
+    }
+
+    public ArrayList<Inventory> getInventory() {
+        return inventory;
+    }
 
     public Player getPlayer() {
         return player;

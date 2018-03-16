@@ -15,15 +15,16 @@ import java.util.Objects;
 public class Inventory implements Serializable{
     
     InventoryItemType item;
-    int currentyWeight;
-    int currentStrength; // need to fix this
+    int currentWeight;
+    int currentStrength;
+    int maxWeight;
 
     public Inventory() {
     }    
 
-    public Inventory(InventoryItemType item, int currentyWeight, int currentStrength) {
+    public Inventory(InventoryItemType item, int currentWeight, int currentStrength) {
         this.item = item;
-        this.currentyWeight = currentyWeight;
+        this.currentWeight = currentWeight;
         this.currentStrength = currentStrength;
     }
 
@@ -32,7 +33,7 @@ public class Inventory implements Serializable{
     }
 
     public int getCurrentyWeight() {
-        return currentyWeight;
+        return currentWeight;
     }
 
     public int getCurrentStrength() {
@@ -43,8 +44,8 @@ public class Inventory implements Serializable{
         this.item = item;
     }
 
-    public void setCurrentyWeight(int currentyWeight) {
-        this.currentyWeight = currentyWeight;
+    public void setCurrentyWeight(int currentWeight) {
+        this.currentWeight = currentWeight;
     }
 
     public void setCurrentStrength(int currentStrength) {
@@ -55,7 +56,7 @@ public class Inventory implements Serializable{
     public int hashCode() {
         int hash = 3;
         hash = 61 * hash + Objects.hashCode(this.item);
-        hash = 61 * hash + this.currentyWeight;
+        hash = 61 * hash + this.currentWeight;
         hash = 61 * hash + this.currentStrength;
         return hash;
     }
@@ -72,7 +73,7 @@ public class Inventory implements Serializable{
             return false;
         }
         final Inventory other = (Inventory) obj;
-        if (this.currentyWeight != other.currentyWeight) {
+        if (this.currentWeight != other.currentWeight) {
             return false;
         }
         if (this.currentStrength != other.currentStrength) {
@@ -86,6 +87,6 @@ public class Inventory implements Serializable{
 
     @Override
     public String toString() {
-        return "Inventory{" + "item=" + item + ", currentyWeight=" + currentyWeight + ", currentStrength=" + currentStrength + '}';
+        return "Inventory{" + "item=" + item + ", currentWeight=" + currentWeight + ", currentStrength=" + currentStrength + '}';
     }
 }
