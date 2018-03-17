@@ -5,7 +5,11 @@
  */
 package view;
 
+import java.util.ArrayList;
 import java.util.Scanner;
+import model.Location;
+import model.Map;
+import mormontrail.MormonTrail;
 
 /**
  *
@@ -59,7 +63,38 @@ public class GameMenuView extends View{
     }
 
     private void viewGameMap() {
-        System.out.println("view map");
+        Map map = MormonTrail.getCurrentGame().getMap();
+        ArrayList<Location> locations = map.getLocations();
+        Location current = map.getCurrentLocation();
+        boolean marker = false;
+        for (int i = 0; i < locations.size(); i++) {
+            if (marker == false) {
+                //check if current should be printed
+                if (locations.get(i).getMilepost() < current.getMilepost()) {
+                    System.out.println(locations.get(i).getName() + " -- Type: " + 
+                        locations.get(i).getType() + " -- Mile marker: " + 
+                        locations.get(i).getMilepost());
+                }
+                else {
+                    System.out.println("Current location: Mile marker " + 
+                            current.getMilepost());
+                    int distance = locations.get(i).getMilepost() - current.getMilepost();
+                    System.out.println(locations.get(i).getName() + " -- Type: " + 
+                        locations.get(i).getType() + " -- Mile marker: " + 
+                        locations.get(i).getMilepost() + " -- Distance to location: " + 
+                        distance + " miles");
+                    marker = true;
+                }
+            }
+            else {
+                //print next location
+                    int distance = locations.get(i).getMilepost() - current.getMilepost();
+                    System.out.println(locations.get(i).getName() + " -- Type: " + 
+                        locations.get(i).getType() + " -- Mile marker: " + 
+                        locations.get(i).getMilepost() + " -- Distance to location: " + 
+                        distance + " miles");
+            }
+        }
     }
 
     private void displayHelpMenu() {

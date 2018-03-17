@@ -67,10 +67,6 @@ public class GameControl {
         return 1; 
     }
     
-    public static void initializeMap() {
-        System.out.println("initializeMap() called");
-    }
-    
     private static ArrayList<Characters> createCharacters(Player player, Game game) {
         ArrayList<Characters> characters = new ArrayList<>();
         Characters mainChar = new Characters(player.toString(), 2000, 5, 5, 5, 100);
@@ -106,6 +102,7 @@ public class GameControl {
         locations.add(new Location("Bear River", "river", 1216));
         locations.add(new Location("Salt Lake Valley", "town", 1297));
         map.setLocations(locations);
+        map.setCurrentLocation(locations.get(0));
         return map;
     }  
 }
