@@ -76,18 +76,22 @@ public class GameMenuView extends View{
                         locations.get(i).getMilepost());
                 }
                 else {
+                    // print current location before ArrayList location
                     System.out.println("Current location: Mile marker " + 
                             current.getMilepost());
+                    // calc distance
                     int distance = locations.get(i).getMilepost() - current.getMilepost();
+                    // print ArrayList location
                     System.out.println(locations.get(i).getName() + " -- Type: " + 
                         locations.get(i).getType() + " -- Mile marker: " + 
                         locations.get(i).getMilepost() + " -- Distance to location: " + 
                         distance + " miles");
+                    // stop checking if current location should be printed
                     marker = true;
                 }
             }
             else {
-                //print next location
+                //print next ArrayList location
                     int distance = locations.get(i).getMilepost() - current.getMilepost();
                     System.out.println(locations.get(i).getName() + " -- Type: " + 
                         locations.get(i).getType() + " -- Mile marker: " + 
