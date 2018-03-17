@@ -15,49 +15,48 @@ import java.util.Objects;
 public class Inventory implements Serializable{
     
     InventoryItemType item;
-    int currentWeight;
-    int currentStrength;
-    int maxWeight;
+    int weight;
+    int value;
 
     public Inventory() {
     }    
 
-    public Inventory(InventoryItemType item, int currentWeight, int currentStrength) {
+    public Inventory(InventoryItemType item, int weight, int value) {
         this.item = item;
-        this.currentWeight = currentWeight;
-        this.currentStrength = currentStrength;
+        this.weight = weight;
+        this.value = value;
     }
 
     public InventoryItemType getItem() {
         return item;
     }
 
-    public int getCurrentyWeight() {
-        return currentWeight;
-    }
-
-    public int getCurrentStrength() {
-        return currentStrength;
-    }
-
     public void setItem(InventoryItemType item) {
         this.item = item;
     }
 
-    public void setCurrentyWeight(int currentWeight) {
-        this.currentWeight = currentWeight;
+    public int getWeight() {
+        return weight;
     }
 
-    public void setCurrentStrength(int currentStrength) {
-        this.currentStrength = currentStrength;
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
     }
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 61 * hash + Objects.hashCode(this.item);
-        hash = 61 * hash + this.currentWeight;
-        hash = 61 * hash + this.currentStrength;
+        int hash = 7;
+        hash = 29 * hash + Objects.hashCode(this.item);
+        hash = 29 * hash + this.weight;
+        hash = 29 * hash + this.value;
         return hash;
     }
 
@@ -73,10 +72,10 @@ public class Inventory implements Serializable{
             return false;
         }
         final Inventory other = (Inventory) obj;
-        if (this.currentWeight != other.currentWeight) {
+        if (this.weight != other.weight) {
             return false;
         }
-        if (this.currentStrength != other.currentStrength) {
+        if (this.value != other.value) {
             return false;
         }
         if (this.item != other.item) {
@@ -87,6 +86,8 @@ public class Inventory implements Serializable{
 
     @Override
     public String toString() {
-        return "Inventory{" + "item=" + item + ", currentWeight=" + currentWeight + ", currentStrength=" + currentStrength + '}';
+        return "Inventory{" + "item=" + item + ", weight=" + weight + ", value=" + value + '}';
     }
+
+    
 }

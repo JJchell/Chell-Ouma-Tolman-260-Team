@@ -12,5 +12,5 @@ import java.io.Serializable;
  * @author scott
  */
 public enum InventoryItemType  implements Serializable{
-    Ox, Wagon, Food, SpareWheel, Ammunition, MaxWeight, MaxStrength 
+    Ox, Wagon, Food, SpareWheel, Ammunition 
 };
