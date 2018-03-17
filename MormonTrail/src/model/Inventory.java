@@ -15,14 +15,16 @@ import java.util.Objects;
 public class Inventory implements Serializable{
     
     InventoryItemType item;
+    int quantity;
     int weight;
     int value;
 
     public Inventory() {
     }    
 
-    public Inventory(InventoryItemType item, int weight, int value) {
+    public Inventory(InventoryItemType item, int quantity, int weight, int value) {
         this.item = item;
+        this.quantity = quantity;
         this.weight = weight;
         this.value = value;
     }
@@ -33,6 +35,14 @@ public class Inventory implements Serializable{
 
     public void setItem(InventoryItemType item) {
         this.item = item;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     public int getWeight() {
@@ -54,9 +64,10 @@ public class Inventory implements Serializable{
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 29 * hash + Objects.hashCode(this.item);
-        hash = 29 * hash + this.weight;
-        hash = 29 * hash + this.value;
+        hash = 47 * hash + Objects.hashCode(this.item);
+        hash = 47 * hash + this.quantity;
+        hash = 47 * hash + this.weight;
+        hash = 47 * hash + this.value;
         return hash;
     }
 
@@ -72,6 +83,9 @@ public class Inventory implements Serializable{
             return false;
         }
         final Inventory other = (Inventory) obj;
+        if (this.quantity != other.quantity) {
+            return false;
+        }
         if (this.weight != other.weight) {
             return false;
         }
@@ -86,8 +100,10 @@ public class Inventory implements Serializable{
 
     @Override
     public String toString() {
-        return "Inventory{" + "item=" + item + ", weight=" + weight + ", value=" + value + '}';
+        return "Inventory{" + "item=" + item + ", quantity=" + quantity + ", weight=" + weight + ", value=" + value + '}';
     }
+
+    
 
     
 }
