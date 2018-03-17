@@ -5,6 +5,7 @@
  */
 package view;
 
+import control.InventoryControl;
 import java.util.ArrayList;
 import java.util.Scanner;
 import model.Location;
@@ -54,7 +55,7 @@ public class GameMenuView extends View{
     }
 
     private void viewTeamSupplies() {
-        System.out.println("view Supplies");
+        InventoryControl.inventoryStatus();
     }
 
     private void setTeamPace() {
