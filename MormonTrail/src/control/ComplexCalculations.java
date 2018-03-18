@@ -5,9 +5,11 @@
  */
 package control;
 
+import java.util.ArrayList;
 import model.Pace;
 import model.Rations;
 import model.Weather;
+import.model.GameControl;
 
 /**
  *
@@ -101,5 +103,18 @@ public class ComplexCalculations {
             return -1; // returning a negative number as indication of invalid arguments
     }
 
-}
+    public static int createAverageStamina() {
+        ArrayList<Integer> averageStamina = new ArrayList<>();
+        averageStamina.add(5);
+        averageStamina.add(8);
+        averageStamina.add(5);
+        averageStamina.add(8);
+        int total = 0;
+        int avg;
+        for(int i = 0; i < averageStamina.size(); i++)
+    {
+        total += averageStamina.get(i);
+        avg = total / averageStamina.size();
+        System.out.println("The average stamina is:" + avg);
+    }
 
