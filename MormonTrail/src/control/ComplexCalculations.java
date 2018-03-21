@@ -110,12 +110,11 @@ public class ComplexCalculations {
         averageStamina.add(8);
         int total = 0;
         int avg;
-        for(int i = 0; i < averageStamina.size(); i++)
-    {
-        total += averageStamina.get(i);
-        avg = total / averageStamina.size();
-        System.out.println("The average stamina is:" + avg);
-    }
+        for(int i = 0; i < averageStamina.size(); i++) {
+            total += averageStamina.get(i);
+            avg = total / averageStamina.size();
+            System.out.println("The average stamina is:" + avg);
+        }
  
     }
 }
