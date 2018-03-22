@@ -6,6 +6,7 @@
 package view;
 
 import control.GameControl;
+import exceptions.GameControlException;
 import java.util.Scanner;
 import model.Game;
 import mormontrail.MormonTrail;
@@ -61,7 +62,12 @@ public class MainMenuView extends View {
     }
 
     private void startNewGame() {
+        try{
         GameControl.createNewGame(MormonTrail.getPlayer());
+        }
+        catch(GameControlException gce) {
+            System.out.println(gce.getMessage());
+        }
         GameMenuView gameMenuView = new GameMenuView();
         gameMenuView.display();
     }

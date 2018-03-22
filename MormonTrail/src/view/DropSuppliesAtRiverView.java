@@ -46,7 +46,14 @@ public class DropSuppliesAtRiverView extends View{
     private int getQntInput() {
         System.out.print("Enter the quantity you would like to drop: ");
         Scanner scan = new Scanner(System.in);
-        int qnt = scan.nextInt();
+        String inp = scan.nextLine();
+        int qnt = 0;
+        try {
+            qnt = Integer.parseInt(inp);
+        }
+        catch(NumberFormatException nfe) {
+            System.out.println("Please enter a valid Integer.");
+        }
         return qnt;
     }
     

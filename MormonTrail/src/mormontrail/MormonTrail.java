@@ -40,8 +40,14 @@ public class MormonTrail {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        try {
         StartProgramView startProgramView = new StartProgramView();
-        startProgramView.display();
+        startProgramView.display();            
+        }
+        catch(Throwable te) {
+            System.out.println(te.getMessage());
+            te.printStackTrace();
+        }
     }
     
     public static Game getCurrentGame() {

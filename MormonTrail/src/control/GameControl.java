@@ -5,6 +5,7 @@
  */
 package control;
 
+import exceptions.GameControlException;
 import java.util.ArrayList;
 import model.Characters;
 import model.Game;
@@ -29,42 +30,29 @@ public class GameControl {
         return player;
     }
     
-    public static int createNewGame(Player player) {
-//        if (player == null)
-//        return -1
+    public static void createNewGame(Player player) 
+        throws GameControlException{
+        
         if (MormonTrail.getPlayer() == null) {
-            return -1;
+            throw new GameControlException("ERROR: No Player initialized");
         }
-//        game = create a new Game object
         Game game = new Game();
-//        Save a reference to the Player object in the game
         Player playa = MormonTrail.getPlayer();
         game.setPlayer(playa);
-//        Save a reference to the game in the main class
         MormonTrail.setCurrentGame(game);
-//        actors = createActors()
         ArrayList<Characters> characters = createCharacters(playa, game);
-//        Save the list of actors in the Game object
         game.setCharacters(characters);
-//        Assign an actor to the player
-//        items = createItems()
         ArrayList<Inventory> inventory = createInventory();
-//        Save the list of items in the game
         game.setInventory(inventory);
-//        map = createMap(noOfRows, noOfColumns, items)
         Map map = createMap();
         game.setVisited(new Map());
         game.setToVisit(createMap());
         
-//        IF map == null THEN
-//         RETURN -1
         if (map == null) {
-            return -1;
+            throw new GameControlException("ERROR: No Map initialized");
         }
-//        ENDIF
-//        Assign the map to the game
+        
         game.setMap(map);
-        return 1; 
     }
     
     private static ArrayList<Characters> createCharacters(Player player, Game game) {
