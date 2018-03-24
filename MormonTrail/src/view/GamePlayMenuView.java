@@ -7,6 +7,7 @@ package view;
 
 import control.DailyHealthDrawControl;
 import exceptions.DailyHealthDrawControlException;
+import java.util.Scanner;
 
 /**
  *
@@ -59,11 +60,21 @@ public class GamePlayMenuView extends View{
     }
     
     private void keepGoing() {
+        System.out.println("What is your favorite number?");
+        Scanner scan = new Scanner(System.in);
+        String fav = scan.nextLine();
         try{
+            Double favNum = Double.parseDouble(fav);
             DailyHealthDrawControl.wearAndTear();
         }
         catch(DailyHealthDrawControlException ex) {
             System.out.println(ex.getMessage());
+        }
+        catch(NumberFormatException Nex) {
+            System.out.println("Dude...That's not a number.");
+        }
+        finally {
+            System.out.println("Thanks for being an awesome gamer!");
         }
     }
     
