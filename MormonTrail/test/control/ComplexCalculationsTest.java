@@ -221,98 +221,98 @@ public class ComplexCalculationsTest {
         assertEquals(expResult, result);
    } 
 
-    /**
-     * Test of calcDailyHealthDraw method, of class ComplexCalculations.
-     */
-    @Test
-    public void testCalcDailyHealthDraw() {
-        System.out.println("calcDailyHealthDraw");
-        
-        // --Test Case 1--
-        // input variables
-        float health = 50F;
-        float stamina = 5F;
-        Rations ration = Rations.NORMAL;
-        Weather weather = Weather.GOOD;
-        Pace pace = Pace.AVERAGE;
-        ComplexCalculations instance = new ComplexCalculations();
-        // expected output
-        float expResult = 7.5F;
-        // call the method
-        float result = instance.calcDailyHealthDraw(health, stamina, ration, weather, pace);
-        //test to see if result returned equals the expected result
-        assertEquals(expResult, result, 0.1);
-        
-        // --Test Case 2--
-        // input variables
-        health = 120F;
-        stamina = 7F;
-        ration = Rations.MEAGER;
-        weather = Weather.COLD;
-        pace = Pace.SLOW;
-        // expected output
-        expResult = -1F;
-        // call the method
-        result = instance.calcDailyHealthDraw(health, stamina, ration, weather, pace);
-        //test to see if result returned equals the expected result
-        assertEquals(expResult, result, 0.1);
-        
-        // --Test Case 3--
-        // input variables
-        health = -20F;
-        stamina = -3F;
-        ration = Rations.NORMAL;
-        weather = Weather.HOT;
-        pace = Pace.AVERAGE;
-        // expected output
-        expResult = -1F;
-        // call the method
-        result = instance.calcDailyHealthDraw(health, stamina, ration, weather, pace);
-        //test to see if result returned equals the expected result
-        assertEquals(expResult, result, 0.1);
-        
-        // --Test Case 4--
-        // input variables
-        health = 30F;
-        stamina = 15F;
-        ration = Rations.FEAST;
-        weather = Weather.GOOD;
-        pace = Pace.FAST;
-        // expected output
-        expResult = -1F;
-        // call the method
-        result = instance.calcDailyHealthDraw(health, stamina, ration, weather, pace);
-        //test to see if result returned equals the expected result
-        assertEquals(expResult, result, 0.1);
-        
-        // --Test Case 5--
-        // input variables
-        health = 100F;
-        stamina = 10F;
-        ration = Rations.FEAST;
-        weather = Weather.HOT;
-        pace = Pace.FAST;
-        // expected output
-        expResult = 10F;
-        // call the method
-        result = instance.calcDailyHealthDraw(health, stamina, ration, weather, pace);
-        //test to see if result returned equals the expected result
-        assertEquals(expResult, result, 0.1);
-        
-        // --Test Case 6--
-        // input variables
-        health = 1F;
-        stamina = 1F;
-        ration = Rations.MEAGER;
-        weather = Weather.COLD;
-        pace = Pace.SLOW;
-        // expected output
-        expResult = 14.1F;
-        // call the method
-        result = instance.calcDailyHealthDraw(health, stamina, ration, weather, pace);
-        //test to see if result returned equals the expected result
-        assertEquals(expResult, result, 0.1);
-    }
+//    /**
+//     * Test of calcDailyHealthDraw method, of class ComplexCalculations.
+//     */
+//    @Test
+//    public void testCalcDailyHealthDraw() {
+//        System.out.println("calcDailyHealthDraw");
+//        
+//        // --Test Case 1--
+//        // input variables
+//        float health = 50F;
+//        float stamina = 5F;
+//        Rations ration = Rations.NORMAL;
+//        Weather weather = Weather.GOOD;
+//        Pace pace = Pace.AVERAGE;
+//        ComplexCalculations instance = new ComplexCalculations();
+//        // expected output
+//        float expResult = 7.5F;
+//        // call the method
+//        float result = instance.calcDailyHealthDraw(health, stamina, ration, weather, pace);
+//        //test to see if result returned equals the expected result
+//        assertEquals(expResult, result, 0.1);
+//        
+//        // --Test Case 2--
+//        // input variables
+//        health = 120F;
+//        stamina = 7F;
+//        ration = Rations.MEAGER;
+//        weather = Weather.COLD;
+//        pace = Pace.SLOW;
+//        // expected output
+//        expResult = -1F;
+//        // call the method
+//        result = instance.calcDailyHealthDraw(health, stamina, ration, weather, pace);
+//        //test to see if result returned equals the expected result
+//        assertEquals(expResult, result, 0.1);
+//        
+//        // --Test Case 3--
+//        // input variables
+//        health = -20F;
+//        stamina = -3F;
+//        ration = Rations.NORMAL;
+//        weather = Weather.HOT;
+//        pace = Pace.AVERAGE;
+//        // expected output
+//        expResult = -1F;
+//        // call the method
+//        result = instance.calcDailyHealthDraw(health, stamina, ration, weather, pace);
+//        //test to see if result returned equals the expected result
+//        assertEquals(expResult, result, 0.1);
+//        
+//        // --Test Case 4--
+//        // input variables
+//        health = 30F;
+//        stamina = 15F;
+//        ration = Rations.FEAST;
+//        weather = Weather.GOOD;
+//        pace = Pace.FAST;
+//        // expected output
+//        expResult = -1F;
+//        // call the method
+//        result = instance.calcDailyHealthDraw(health, stamina, ration, weather, pace);
+//        //test to see if result returned equals the expected result
+//        assertEquals(expResult, result, 0.1);
+//        
+//        // --Test Case 5--
+//        // input variables
+//        health = 100F;
+//        stamina = 10F;
+//        ration = Rations.FEAST;
+//        weather = Weather.HOT;
+//        pace = Pace.FAST;
+//        // expected output
+//        expResult = 10F;
+//        // call the method
+//        result = instance.calcDailyHealthDraw(health, stamina, ration, weather, pace);
+//        //test to see if result returned equals the expected result
+//        assertEquals(expResult, result, 0.1);
+//        
+//        // --Test Case 6--
+//        // input variables
+//        health = 1F;
+//        stamina = 1F;
+//        ration = Rations.MEAGER;
+//        weather = Weather.COLD;
+//        pace = Pace.SLOW;
+//        // expected output
+//        expResult = 14.1F;
+//        // call the method
+//        result = instance.calcDailyHealthDraw(health, stamina, ration, weather, pace);
+//        //test to see if result returned equals the expected result
+//        assertEquals(expResult, result, 0.1);
+//    }
 
     /**
      * Test of calcDayofRest method, of class ComplexCalculations.

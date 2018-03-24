@@ -5,6 +5,9 @@
  */
 package view;
 
+import control.DailyHealthDrawControl;
+import exceptions.DailyHealthDrawControlException;
+
 /**
  *
  * @author stolman
@@ -56,7 +59,12 @@ public class GamePlayMenuView extends View{
     }
     
     private void keepGoing() {
-        System.out.println("keepGoing() called");
+        try{
+            DailyHealthDrawControl.wearAndTear();
+        }
+        catch(DailyHealthDrawControlException ex) {
+            System.out.println(ex.getMessage());
+        }
     }
     
     private void status() {

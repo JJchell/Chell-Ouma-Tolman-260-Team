@@ -7,6 +7,7 @@ package model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Objects;
 
 /**
  *
@@ -17,6 +18,8 @@ public class Game implements Serializable {
     private Player player;
     private int daysOnTrail;
     private Pace pace;
+    private Rations rations;
+    private Weather weather;
     private int milesTraveled;
     private int currentMoneyBalance;
     private Characters mainCharacter;
@@ -25,48 +28,25 @@ public class Game implements Serializable {
     private Map map;
     private Map visited;
     private Map toVisit;
+
     
-    
-    public Game() {}
-    
-    public ArrayList<Characters> getCharacters() {
-        return characters;
+    public Game() {
     }
-    
-    public void setCharacters(ArrayList<Characters> characters) {
+
+    public Game(Player player, int daysOnTrail, Pace pace, Rations rations, Weather weather, int milesTraveled, int currentMoneyBalance, Characters mainCharacter, ArrayList<Characters> characters, ArrayList<Inventory> inventory, Map map, Map visited, Map toVisit) {
+        this.player = player;
+        this.daysOnTrail = daysOnTrail;
+        this.pace = pace;
+        this.rations = rations;
+        this.weather = weather;
+        this.milesTraveled = milesTraveled;
+        this.currentMoneyBalance = currentMoneyBalance;
+        this.mainCharacter = mainCharacter;
         this.characters = characters;
-    }
-
-    public void setInventory(ArrayList<Inventory> inventory) {
         this.inventory = inventory;
-    }
-
-    public void setMap(Map map) {
         this.map = map;
-    }
-
-    public void setVisited(Map visited) {
         this.visited = visited;
-    }
-
-    public void setToVisit(Map toVisit) {
         this.toVisit = toVisit;
-    }
-
-    public Map getMap() {
-        return map;
-    }
-
-    public Map getVisited() {
-        return visited;
-    }
-
-    public Map getToVisit() {
-        return toVisit;
-    }
-
-    public ArrayList<Inventory> getInventory() {
-        return inventory;
     }
 
     public Player getPlayer() {
@@ -75,14 +55,6 @@ public class Game implements Serializable {
 
     public void setPlayer(Player player) {
         this.player = player;
-    }
-
-    public Characters getMainCharacter() {
-        return mainCharacter;
-    }
-
-    public void setMainCharacter(Characters mainCharacter) {
-        this.mainCharacter = mainCharacter;
     }
 
     public int getDaysOnTrail() {
@@ -101,6 +73,22 @@ public class Game implements Serializable {
         this.pace = pace;
     }
 
+    public Rations getRations() {
+        return rations;
+    }
+
+    public void setRations(Rations rations) {
+        this.rations = rations;
+    }
+
+    public Weather getWeather() {
+        return weather;
+    }
+
+    public void setWeather(Weather weather) {
+        this.weather = weather;
+    }
+
     public int getMilesTraveled() {
         return milesTraveled;
     }
@@ -117,20 +105,71 @@ public class Game implements Serializable {
         this.currentMoneyBalance = currentMoneyBalance;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 29 * hash + this.daysOnTrail;
-        hash = 29 * hash + this.milesTraveled;
-        hash = 29 * hash + this.currentMoneyBalance;
-        return hash;
+    public Characters getMainCharacter() {
+        return mainCharacter;
+    }
+
+    public void setMainCharacter(Characters mainCharacter) {
+        this.mainCharacter = mainCharacter;
+    }
+
+    public ArrayList<Characters> getCharacters() {
+        return characters;
+    }
+
+    public void setCharacters(ArrayList<Characters> characters) {
+        this.characters = characters;
+    }
+
+    public ArrayList<Inventory> getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(ArrayList<Inventory> inventory) {
+        this.inventory = inventory;
+    }
+
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
+
+    public Map getVisited() {
+        return visited;
+    }
+
+    public void setVisited(Map visited) {
+        this.visited = visited;
+    }
+
+    public Map getToVisit() {
+        return toVisit;
+    }
+
+    public void setToVisit(Map toVisit) {
+        this.toVisit = toVisit;
     }
 
     @Override
-    public String toString() {
-        return "Game{" + "daysOnTrail=" + daysOnTrail + ", pace=" + pace 
-                + ", milesTraveled=" + milesTraveled + ", currentMoneyBalance=" 
-                + currentMoneyBalance + '}';
+    public int hashCode() {
+        int hash = 7;
+        hash = 89 * hash + Objects.hashCode(this.player);
+        hash = 89 * hash + this.daysOnTrail;
+        hash = 89 * hash + Objects.hashCode(this.pace);
+        hash = 89 * hash + Objects.hashCode(this.rations);
+        hash = 89 * hash + Objects.hashCode(this.weather);
+        hash = 89 * hash + this.milesTraveled;
+        hash = 89 * hash + this.currentMoneyBalance;
+        hash = 89 * hash + Objects.hashCode(this.mainCharacter);
+        hash = 89 * hash + Objects.hashCode(this.characters);
+        hash = 89 * hash + Objects.hashCode(this.inventory);
+        hash = 89 * hash + Objects.hashCode(this.map);
+        hash = 89 * hash + Objects.hashCode(this.visited);
+        hash = 89 * hash + Objects.hashCode(this.toVisit);
+        return hash;
     }
 
     @Override
@@ -148,16 +187,48 @@ public class Game implements Serializable {
         if (this.daysOnTrail != other.daysOnTrail) {
             return false;
         }
-        if (this.pace != other.pace) {
-            return false;
-        }
         if (this.milesTraveled != other.milesTraveled) {
             return false;
         }
         if (this.currentMoneyBalance != other.currentMoneyBalance) {
             return false;
         }
+        if (!Objects.equals(this.player, other.player)) {
+            return false;
+        }
+        if (this.pace != other.pace) {
+            return false;
+        }
+        if (this.rations != other.rations) {
+            return false;
+        }
+        if (this.weather != other.weather) {
+            return false;
+        }
+        if (!Objects.equals(this.mainCharacter, other.mainCharacter)) {
+            return false;
+        }
+        if (!Objects.equals(this.characters, other.characters)) {
+            return false;
+        }
+        if (!Objects.equals(this.inventory, other.inventory)) {
+            return false;
+        }
+        if (!Objects.equals(this.map, other.map)) {
+            return false;
+        }
+        if (!Objects.equals(this.visited, other.visited)) {
+            return false;
+        }
+        if (!Objects.equals(this.toVisit, other.toVisit)) {
+            return false;
+        }
         return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Game{" + "player=" + player + ", daysOnTrail=" + daysOnTrail + ", pace=" + pace + ", rations=" + rations + ", weather=" + weather + ", milesTraveled=" + milesTraveled + ", currentMoneyBalance=" + currentMoneyBalance + ", mainCharacter=" + mainCharacter + ", characters=" + characters + ", inventory=" + inventory + ", map=" + map + ", visited=" + visited + ", toVisit=" + toVisit + '}';
     }
     
     
