@@ -36,17 +36,17 @@ public class ComplexCalculations {
      * @param strenghtOfOxen
      * @return 
      */
-    public static int calcRiverSuccess(int weightOfWagon, int depthOfRiver, 
-            int randomNumber, int strenghtOfOxen) {
-        if (weightOfWagon > 13 && weightOfWagon < 33 && depthOfRiver > 12 &&
-            depthOfRiver < 48 && randomNumber > 1 && randomNumber < 25 &&
-            strenghtOfOxen > 1 && strenghtOfOxen < 40) {
-            return (weightOfWagon + depthOfRiver + randomNumber) - strenghtOfOxen;
-        }
-        else
-            return -1; // returning negative number as indication of invalid arguments
-    }
-    
+   /* public static int calcRiverSuccess(int weightOfWagon, int depthOfRiver, 
+    *        int randomNumber, int strenghtOfOxen) {
+    *   if (weightOfWagon > 13 && weightOfWagon < 33 && depthOfRiver > 12 &&
+    *        depthOfRiver < 48 && randomNumber > 1 && randomNumber < 25 &&
+    *        strenghtOfOxen > 1 && strenghtOfOxen < 40) {
+    *        return (weightOfWagon + depthOfRiver + randomNumber) - strenghtOfOxen;
+    *   }
+    *    else
+    *        return -1; // returning negative number as indication of invalid arguments
+    *}
+    */
     public float calcDailyHealthDraw (float health, float stamina, Rations ration, Weather weather, Pace pace) {
 
         // basic health draw for normal pace, normal rations, and good weather
