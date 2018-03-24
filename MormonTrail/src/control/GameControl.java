@@ -12,7 +12,10 @@ import model.Game;
 import model.Inventory;
 import model.Location;
 import model.Map;
+import model.Pace;
 import model.Player;
+import model.Rations;
+import model.Weather;
 import mormontrail.MormonTrail;
 
 /**
@@ -40,6 +43,9 @@ public class GameControl {
         Player playa = MormonTrail.getPlayer();
         game.setPlayer(playa);
         MormonTrail.setCurrentGame(game);
+        game.setPace(Pace.AVERAGE);
+        game.setWeather(Weather.GOOD);
+        game.setRations(Rations.NORMAL);
         ArrayList<Characters> characters = createCharacters(playa, game);
         game.setCharacters(characters);
         ArrayList<Inventory> inventory = createInventory();
@@ -57,7 +63,7 @@ public class GameControl {
     
     private static ArrayList<Characters> createCharacters(Player player, Game game) {
         ArrayList<Characters> characters = new ArrayList<>();
-        Characters mainChar = new Characters(player.toString(), 2000, 5, 5, 5, 100);
+        Characters mainChar = new Characters(player.toString(), 2000, 5, 5, 1, 100);
         game.setMainCharacter(mainChar);
         characters.add(mainChar);
         characters.add(new Characters("James", 0, 10, 2, 8, 100));
@@ -92,5 +98,6 @@ public class GameControl {
         map.setLocations(locations);
         map.setCurrentLocation(locations.get(0));
         return map;
-    }  
+    } 
+    
 }
