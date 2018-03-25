@@ -91,20 +91,20 @@ public class ComplexCalculations {
     * @param stamina
     * @return 
     */
-    public static int calcDayofRest (int stamina) {
-        if (stamina >=0 && stamina <4)
-            return 3;
-        else if (stamina >= 4 && stamina <7)
-            return 2;
-        else if (stamina >= 7 && stamina <10)
-            return 1;
-        else if (stamina == 10)
-            return 0;
-        else
-            return -1; // returning a negative number as indication of invalid arguments
-    }
-
-    public static void createAverageStamina() { // Scott Tolman: changed return type from int to void, since method is not returning anything
+    /*   public static int calcDayofRest (int stamina) {
+    if (stamina >=0 && stamina <4)
+    return 3;
+    else if (stamina >= 4 && stamina <7)
+    return 2;
+    else if (stamina >= 7 && stamina <10)
+    return 1;
+    else if (stamina == 10)
+    return 0;
+    else
+    return -1; // returning a negative number as indication of invalid arguments
+    }*/
+    
+    public static void createAverageStamina() {
         ArrayList<Integer> averageStamina = new ArrayList<>();
         averageStamina.add(5);
         averageStamina.add(8);
