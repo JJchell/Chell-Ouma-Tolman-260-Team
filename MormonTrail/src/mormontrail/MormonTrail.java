@@ -5,7 +5,13 @@
  */
 package mormontrail;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import model.Characters;
 import model.InventoryItemType;
 import model.Scene;
@@ -35,18 +41,34 @@ public class MormonTrail {
 
     private static Game currentGame = null;
     private static Player player = null;
+    private static PrintWriter outFile = null;
+    private static BufferedReader inFile = null;
     
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         try {
-        StartProgramView startProgramView = new StartProgramView();
-        startProgramView.display();            
+            MormonTrail.inFile = new BufferedReader(new InputStreamReader(System.in));
+            MormonTrail.outFile = new PrintWriter(System.out, true);
+            
+            StartProgramView startProgramView = new StartProgramView();
+            startProgramView.display();            
         }
         catch(Throwable te) {
             System.out.println(te.getMessage());
             te.printStackTrace();
+        }
+        finally {
+            try {
+                if (MormonTrail.inFile != null)
+                    MormonTrail.inFile.close();
+                if (MormonTrail.outFile != null)
+                    MormonTrail.outFile.close();
+            } catch (IOException ex) {
+                System.out.println("Error closing files");
+                return;
+            }
         }
     }
     
@@ -65,5 +87,23 @@ public class MormonTrail {
     public static void setPlayer(Player player) {
         MormonTrail.player = player;
     }
+
+    public static PrintWriter getOutFile() {
+        return outFile;
+    }
+
+    public static void setOutFile(PrintWriter outFile) {
+        MormonTrail.outFile = outFile;
+    }
+
+    public static BufferedReader getInFile() {
+        return inFile;
+    }
+
+    public static void setInFile(BufferedReader inFile) {
+        MormonTrail.inFile = inFile;
+    }
+    
+    
 }
 
