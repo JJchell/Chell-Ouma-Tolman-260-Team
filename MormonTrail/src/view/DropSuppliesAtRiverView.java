@@ -39,30 +39,31 @@ public class DropSuppliesAtRiverView extends View{
             return true;
         }
         else
-            System.out.println("Invalid entry");
+            this.console.println("Invalid entry");
         return false;
     }
     
     private int getQntInput() {
             int qnt = 0;
         try{
-            System.out.print("Enter the quantity you would like to drop: ");
+            this.console.print("Enter the quantity you would like to drop: ");
             Scanner scan = new Scanner(this.keyboard.readLine());
             String inp = scan.nextLine();
             try {
                 qnt = Integer.parseInt(inp);
             }
             catch(NumberFormatException nfe) {
-                System.out.println("Please enter a valid Integer.");
+                ErrorView.display(this.getClass().getName(), "Please enter a valid Integer.");
+                
             }
         } catch (Exception e) {
-            System.out.println("Error reading input: " + e.getMessage());
+                ErrorView.display(this.getClass().getName(), "Error reading input: " + e.getMessage());
         }
         return qnt;
     }
     
     private void modifyInventory(String item, int qnt) {
-        System.out.println("modifyInventory() has been called to remove " + qnt +""
+        this.console.println("modifyInventory() has been called to remove " + qnt +""
         + " " + item);
     }
     

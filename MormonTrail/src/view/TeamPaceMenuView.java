@@ -36,7 +36,7 @@ public class TeamPaceMenuView extends View{
             case "F": changePace("Fast");
                 break;
             case "Q": return true;
-            default: System.out.println("Invalid pace option.");
+            default: this.console.println("Invalid pace option.");
         }
         return false;
     }
@@ -45,7 +45,7 @@ public class TeamPaceMenuView extends View{
         //Game game = MormonTrail.getCurrentGame();
         //game.setPace(pace);
         
-        System.out.println("\n*** Pace set to " + pace + " ***\n");
+        this.console.println("\n*** Pace set to " + pace + " ***\n");
     }
 }
 

@@ -57,13 +57,13 @@ public class GamePlayMenuView extends View{
             case "H": help();
             break;
             case "Q": return true;
-            default: System.out.println("Invalid menu item");
+            default: this.console.println("Invalid menu item");
         }
         return false;
     }
     
     private void keepGoing() {
-        System.out.println("What is your favorite number?");
+        this.console.println("What is your favorite number?");
         String selection;
         try {
             selection = this.keyboard.readLine();
@@ -72,40 +72,40 @@ public class GamePlayMenuView extends View{
             DailyHealthDrawControl.wearAndTear();
         }
         catch(DailyHealthDrawControlException ex) {
-            System.out.println(ex.getMessage());
+            ErrorView.display(this.getClass().getName(), ex.getMessage());
         }
         catch(NumberFormatException Nex) {
-            System.out.println("Dude...That's not a number.");
+            ErrorView.display(this.getClass().getName(), "Dude...That's not a number.");
         } catch (Exception ex) {
-            System.out.println("Error reading input: " + ex.getMessage());
+            ErrorView.display(this.getClass().getName(), "Error reading input: " + ex.getMessage());
         }
         finally {
-            System.out.println("Thanks for being an awesome gamer!");
+            this.console.println("Thanks for being an awesome gamer!");
         }
     }
     
     private void status() {
-        System.out.println("status() called");
+        this.console.println("status() called");
     }
     
     private void supplies() {
-        System.out.println("supplies() called");
+        this.console.println("supplies() called");
     }
     
     private void pace() {
-        System.out.println("pace() called");
+        this.console.println("pace() called");
     }
     
     private void interact() {
-        System.out.println("interact() called");
+        this.console.println("interact() called");
     }
     
     private void map() {
-        System.out.println("map() called");
+        this.console.println("map() called");
     }
     
     private void help() {
-        System.out.println("help() called");
+        this.console.println("help() called");
     }
     
 }

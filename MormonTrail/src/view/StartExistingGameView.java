@@ -9,10 +9,16 @@ package view;
  *
  * @author scott
  */
-public class StartExistingGameView {
+public class StartExistingGameView extends View{
     
     public void displayStartExistingGameView() {
-        System.out.println("displayStartExistingGameView() called");
+        this.console.println("displayStartExistingGameView() called");
+    }
+
+    @Override
+    public boolean doAction(String input) {
+        this.console.println("displayStartExistingGameView() called");
+        return true;
     }
     
 }

@@ -32,12 +32,12 @@ public class TeamStatusView extends View{
             return true;
         }
         else {
-            System.out.println("invaled input");
+            this.console.println("invaled input");
         }
         return false;
     }
         
     private void saveReport() {
-        System.out.println("Save report");
+        this.console.println("Save report");
     }
 }

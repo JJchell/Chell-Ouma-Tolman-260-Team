@@ -5,11 +5,13 @@
  */
 package model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Ouma
  */
-public class Player {
+public class Player implements Serializable{
     String name; 
     
     public Player(String name){

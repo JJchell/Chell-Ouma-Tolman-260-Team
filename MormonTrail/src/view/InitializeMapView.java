@@ -41,33 +41,33 @@ public class InitializeMapView extends View{
             case "DT": displayDailyTrailStop();
                 break;
             case "Q": return true;
-            default: System.out.println("\n***Invalid selecation*** Try again");
+            default: this.console.println("\n***Invalid selecation*** Try again");
         }
         return false;
     }
 
     private void displayVisitHotelScene() {
-        System.out.println("displayHotelScene() called");
+        this.console.println("displayHotelScene() called");
     }
 
     private void displayVisitFortScene() {
-        System.out.println("displayFortScene() called");
+        this.console.println("displayFortScene() called");
     }
 
     private void displayVisitGeneralStore() {
-        System.out.println("displayGeneralStore() called");
+        this.console.println("displayGeneralStore() called");
     }
 
     private void displayVisitTownScene() {
-        System.out.println("displayTownScene() called");
+        this.console.println("displayTownScene() called");
     }
 
     private void displayVisitRiverCrossing() {
-        System.out.println("displayVisitRiverCrossing() called");
+        this.console.println("displayVisitRiverCrossing() called");
     }
 
     private void displayDailyTrailStop() {
-       System.out.println("displayDailyTrailStop() called");
+       this.console.println("displayDailyTrailStop() called");
     }
 
 }

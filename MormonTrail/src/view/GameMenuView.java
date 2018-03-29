@@ -25,6 +25,7 @@ public class GameMenuView extends View{
                 + "P - What is our pace?\n"
                 + "M - View the map\n"
                 + "H - Help menu\n"
+                + "G - Save the game\n"
                 + "Q - Quit\n");
     }
     
@@ -43,8 +44,10 @@ public class GameMenuView extends View{
                 break;
             case "H": displayHelpMenu();
                 break;
+            case "G": saveGame();
+                break;
             case "Q": return true;
-            default: System.out.println("Invalid menu item");
+            default: this.console.println("Invalid menu item");
         }
         return false;
     }
@@ -72,18 +75,18 @@ public class GameMenuView extends View{
             if (marker == false) {
                 //check if current should be printed
                 if (locations.get(i).getMilepost() < current.getMilepost()) {
-                    System.out.println(locations.get(i).getName() + " -- Type: " + 
+                    this.console.println(locations.get(i).getName() + " -- Type: " + 
                         locations.get(i).getType() + " -- Mile marker: " + 
                         locations.get(i).getMilepost());
                 }
                 else {
                     // print current location before ArrayList location
-                    System.out.println("Current location: Mile marker " + 
+                    this.console.println("Current location: Mile marker " + 
                             current.getMilepost());
                     // calc distance
                     int distance = locations.get(i).getMilepost() - current.getMilepost();
                     // print ArrayList location
-                    System.out.println(locations.get(i).getName() + " -- Type: " + 
+                    this.console.println(locations.get(i).getName() + " -- Type: " + 
                         locations.get(i).getType() + " -- Mile marker: " + 
                         locations.get(i).getMilepost() + " -- Distance to location: " + 
                         distance + " miles");
@@ -94,7 +97,7 @@ public class GameMenuView extends View{
             else {
                 //print next ArrayList location
                     int distance = locations.get(i).getMilepost() - current.getMilepost();
-                    System.out.println(locations.get(i).getName() + " -- Type: " + 
+                    this.console.println(locations.get(i).getName() + " -- Type: " + 
                         locations.get(i).getType() + " -- Mile marker: " + 
                         locations.get(i).getMilepost() + " -- Distance to location: " + 
                         distance + " miles");
@@ -104,6 +107,11 @@ public class GameMenuView extends View{
 
     private void displayHelpMenu() {
         HelpMenuView view = new HelpMenuView();
+        view.display();
+    }
+
+    private void saveGame() {
+        SaveGameView view = new SaveGameView();
         view.display();
     }
     

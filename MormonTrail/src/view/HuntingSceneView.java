@@ -31,14 +31,14 @@ public class HuntingSceneView extends View{
             case "Q":
                 return true;
             default:
-                System.out.println("Invalid option");
+                this.console.println("Invalid option");
                 break;
         }
         return false;
     }
 
     private void huntNow() {
-        System.out.println("huntSuccess() called");
+        this.console.println("huntSuccess() called");
     }    
 }
 

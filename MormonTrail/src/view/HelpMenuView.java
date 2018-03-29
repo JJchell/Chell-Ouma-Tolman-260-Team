@@ -40,33 +40,33 @@ public class HelpMenuView extends View{
             case "RB": displayRedBullHelp();
                 break;
             case "Q": return true;
-            default: System.out.println("Invalid menu item");
+            default: this.console.println("Invalid menu item");
         }
         return false;
     }
 
     private void displayGoalHelp() {
-        System.out.println("displayGoalHelp() called");
+        this.console.println("displayGoalHelp() called");
     }
 
     private void displayMoveHelp() {
-        System.out.println("displayMoveHelp() called");
+        this.console.println("displayMoveHelp() called");
     }
 
     private void displayResourceHelp() {
-        System.out.println("displayResourceHelp() called");
+        this.console.println("displayResourceHelp() called");
     }
 
     private void displayHarvestHelp() {
-        System.out.println("displayHarvestHelp() called");
+        this.console.println("displayHarvestHelp() called");
     }
 
     private void displayDeliveryHelp() {
-        System.out.println("displayDeliveryHelp() called");
+        this.console.println("displayDeliveryHelp() called");
     }
 
     private void displayRedBullHelp() {
-        System.out.println("You now have wings!");
+        this.console.println("You now have wings!");
     }
     
 }

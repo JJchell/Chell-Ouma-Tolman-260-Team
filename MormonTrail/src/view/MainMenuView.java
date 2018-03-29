@@ -56,7 +56,7 @@ public class MainMenuView extends View {
             case "GH": huntingSceneView();
                 break;
             case "E": return true;
-            default: System.out.println("Invalid menu item");
+            default: this.console.println("Invalid menu item");
         }
         return false;
     }
@@ -66,7 +66,7 @@ public class MainMenuView extends View {
         GameControl.createNewGame(MormonTrail.getPlayer());
         }
         catch(GameControlException gce) {
-            System.out.println(gce.getMessage());
+            ErrorView.display(this.getClass().getName(), gce.getMessage());
         }
         GameMenuView gameMenuView = new GameMenuView();
         gameMenuView.display();

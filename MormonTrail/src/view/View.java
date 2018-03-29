@@ -51,19 +51,19 @@ public abstract class View implements ViewInterface {
         try {
         while (!valid) {
             
-            System.out.println("\n" + this.displayMessage);
+            this.console.println("\n" + this.displayMessage);
             value = this.keyboard.readLine();
             value = value.trim();
             
             if (value.length() < 1) {
-                System.out.println("\n*** You must specify a value *** ");
+                this.console.println("\n*** You must specify a value *** ");
                 continue;
             }
             
             break;         
         }
         } catch (Exception e) {
-            System.out.println("Error reading input: " + e.getMessage());
+            ErrorView.display(this.getClass().getName(), "Error reading input: " + e.getMessage());
         }
         
         return value;

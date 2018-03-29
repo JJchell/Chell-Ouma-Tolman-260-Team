@@ -58,53 +58,53 @@ public class DisplayMapView extends View{
             case "H": displayHelpMenu();
                 break;
             case "Q": return true;
-            default: System.out.println("Invalid menu item");
+            default: this.console.println("Invalid menu item");
         }
         return false;
     }
     
     private void viewGardenGrove() {
-        System.out.println("View distance to Garden Grove");
+        this.console.println("View distance to Garden Grove");
     }
 
     private void viewMountPisgah() {
-        System.out.println("View distance to Mount Pisgah");
+        this.console.println("View distance to Mount Pisgah");
     }
 
     private void viewKanesville() {
-        System.out.println("View distance to Kanesville");
+        this.console.println("View distance to Kanesville");
     }
 
     private void viewWinterQuarters() {
-        System.out.println("view distance to Winter Quarters");
+        this.console.println("view distance to Winter Quarters");
     }
     
     private void viewFortKearny() {
-        System.out.println("View distance to Fort Kearny");
+        this.console.println("View distance to Fort Kearny");
     }
     
     private void viewChimneyRock() {
-        System.out.println("View distance to Chimney Rock");
+        this.console.println("View distance to Chimney Rock");
     }
     
     private void viewFortLaramie() {
-        System.out.println("View distance to Fort Laramie");
+        this.console.println("View distance to Fort Laramie");
     }
     
     private void viewIndependenceRock() {
-        System.out.println("View distance to Independence Rock");
+        this.console.println("View distance to Independence Rock");
     }
     
     private void viewMartinsCove() {
-        System.out.println("View distance to Martin's Cove");
+        this.console.println("View distance to Martin's Cove");
     }
     
     private void viewFortBridger() {
-        System.out.println("View distance to Fort Bridger");
+        this.console.println("View distance to Fort Bridger");
     }
     
     private void viewSaltLakeValley() {
-        System.out.println("View distance to Salt Lake Valley");
+        this.console.println("View distance to Salt Lake Valley");
     }
 
     private void displayHelpMenu() {

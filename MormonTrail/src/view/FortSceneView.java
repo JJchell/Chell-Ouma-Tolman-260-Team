@@ -30,17 +30,17 @@ public class FortSceneView extends View{
             case "GA": displayGetAdvice();
                 break;
             case "Q": return true;
-            default: System.out.println("You must specify what you'd like to do.");
+            default: this.console.println("You must specify what you'd like to do.");
         }
         return false;
     }
 
     private void displayDanceParty() {
-        System.out.println("Throw your hands up in the air like you just don't care! Everyone is dancing and you should too!");
+        this.console.println("Throw your hands up in the air like you just don't care! Everyone is dancing and you should too!");
     }
 
     private void displayGetAdvice() {
-        System.out.println("Shelly offers you this advice: TRY your best not to break a nail while dancing. It really hurts.");
+        this.console.println("Shelly offers you this advice: TRY your best not to break a nail while dancing. It really hurts.");
     }
 
   

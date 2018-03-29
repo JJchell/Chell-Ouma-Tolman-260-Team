@@ -30,7 +30,7 @@ public class RiverCrossingSceneMenuView extends View{
             case "C": crossRiver();
                 break;
             case "B": return true;
-            default: System.out.println("Invalid option.");
+            default: this.console.println("Invalid option.");
         }
         return false;
     }
@@ -41,7 +41,7 @@ public class RiverCrossingSceneMenuView extends View{
     }
     
     private void crossRiver() {
-        System.out.println("crossRiver() called");
+        this.console.println("crossRiver() called");
     }
     
 }

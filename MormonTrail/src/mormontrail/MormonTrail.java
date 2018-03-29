@@ -27,6 +27,7 @@ import model.Game;
 import model.Map;
 import model.LocationType;
 import model.Player;
+import view.ErrorView;
 import view.StartProgramView;
 import view.InitializeMapView;
 import view.FortSceneView;
@@ -43,6 +44,7 @@ public class MormonTrail {
     private static Player player = null;
     private static PrintWriter outFile = null;
     private static BufferedReader inFile = null;
+    private static PrintWriter logFile = null;
     
     /**
      * @param args the command line arguments
@@ -51,12 +53,13 @@ public class MormonTrail {
         try {
             MormonTrail.inFile = new BufferedReader(new InputStreamReader(System.in));
             MormonTrail.outFile = new PrintWriter(System.out, true);
+            MormonTrail.logFile = new PrintWriter("logFile.txt");
             
             StartProgramView startProgramView = new StartProgramView();
             startProgramView.display();            
         }
         catch(Throwable te) {
-            System.out.println(te.getMessage());
+            ErrorView.display("MormonTrail", te.getMessage());
             te.printStackTrace();
         }
         finally {
@@ -65,8 +68,10 @@ public class MormonTrail {
                     MormonTrail.inFile.close();
                 if (MormonTrail.outFile != null)
                     MormonTrail.outFile.close();
+                if (MormonTrail.logFile != null)
+                    MormonTrail.logFile.close();
             } catch (IOException ex) {
-                System.out.println("Error closing files");
+                ErrorView.display("MormonTrail", "Error closing files");
                 return;
             }
         }
@@ -102,6 +107,14 @@ public class MormonTrail {
 
     public static void setInFile(BufferedReader inFile) {
         MormonTrail.inFile = inFile;
+    }
+
+    public static PrintWriter getLogFile() {
+        return logFile;
+    }
+
+    public static void setLogFile(PrintWriter logFile) {
+        MormonTrail.logFile = logFile;
     }
     
     

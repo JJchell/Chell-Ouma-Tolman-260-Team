@@ -6,6 +6,10 @@
 package control;
 
 import exceptions.GameControlException;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import model.Characters;
 import model.Game;
@@ -100,4 +104,14 @@ public class GameControl {
         return map;
     } 
     
+    public static void saveGame(Game game, String filePath) throws GameControlException, IOException{
+        if (game == null)
+            throw new GameControlException("Game is null");
+        if (filePath.length() < 1)
+            throw new GameControlException("File Path is invalid");
+        
+        try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(filePath))) {
+            out.writeObject(game);
+        }   
+    }
 }
