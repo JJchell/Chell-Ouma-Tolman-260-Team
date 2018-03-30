@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import model.Characters;
 import model.Game;
 import model.Inventory;
+import model.InventoryItemType;
 import model.Location;
 import model.Map;
 import model.Pace;
@@ -79,7 +80,13 @@ public class GameControl {
     }
 
     private static ArrayList<Inventory> createInventory() {
-        return new ArrayList<Inventory>();
+        ArrayList<Inventory> inventory = new ArrayList<>();
+        inventory.add(new Inventory(InventoryItemType.Ox, 1, -1300, 200));
+        inventory.add(new Inventory(InventoryItemType.Wagon, 1, 300, 250));
+        inventory.add(new Inventory(InventoryItemType.SpareWheel, 3, 75, 30));
+        inventory.add(new Inventory(InventoryItemType.Food, 300, 300, 150));
+        inventory.add(new Inventory(InventoryItemType.Ammunition, 1000, 250, 125));
+        return inventory;
     }
 
     private static Map createMap() {

@@ -5,9 +5,17 @@
  */
 package view;
 
+import control.GameControl;
 import control.InventoryControl;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import model.Inventory;
+import model.InventoryItemType;
 import model.Location;
 import model.Map;
 import mormontrail.MormonTrail;
@@ -26,6 +34,7 @@ public class GameMenuView extends View{
                 + "M - View the map\n"
                 + "H - Help menu\n"
                 + "G - Save the game\n"
+                + "I - Print inventory report\n"
                 + "Q - Quit\n");
     }
     
@@ -45,6 +54,8 @@ public class GameMenuView extends View{
             case "H": displayHelpMenu();
                 break;
             case "G": saveGame();
+                break;
+            case "I": printInventory();
                 break;
             case "Q": return true;
             default: this.console.println("Invalid menu item");
@@ -113,6 +124,36 @@ public class GameMenuView extends View{
     private void saveGame() {
         SaveGameView view = new SaveGameView();
         view.display();
+    }
+
+    private void printInventory() {
+        this.console.println("Please enter a file name where you want your inventory report printed");
+        try {
+            String path = this.keyboard.readLine();
+            printInventoryReport(path);
+        } catch (IOException ex) {
+            ErrorView.display(this.getClass().getName(), ex.getMessage());
+        }
+    }
+    
+    private void printInventoryReport(String path) {
+        try (PrintWriter logFile = new PrintWriter(path)) {
+            logFile.println("\n\n            Inventory Report           ");
+            logFile.printf("%n%-20s%10s%10s%10s", "Type", "Quantity", "Weight*", "Value");
+            logFile.printf("%n%-20s%10s%10s%10s", "-----", "---------", "-------", "------");
+            ArrayList<Inventory> inventory = MormonTrail.getCurrentGame().getInventory();
+            for (int i = 0; i < inventory.size(); i++) {
+                String type = inventory.get(i).getItem().toString();
+                int quantity = inventory.get(i).getQuantity();
+                int weight = inventory.get(i).getWeight();
+                int value = inventory.get(i).getValue();
+                logFile.printf("%n%-20s%10d%10d%10d", type, quantity, weight, value);
+            }
+            logFile.println("\n\n* A negative value denotes carrying capacity");
+            this.console.println("Inventory report printed successfully");
+        } catch (FileNotFoundException ex) {
+            ErrorView.display(this.getClass().getName(), ex.getMessage());
+        }
     }
     
 }

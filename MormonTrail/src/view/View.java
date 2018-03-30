@@ -7,7 +7,6 @@ package view;
 
 import java.io.BufferedReader;
 import java.io.PrintWriter;
-import java.util.Scanner;
 import mormontrail.MormonTrail;
 
 /**
