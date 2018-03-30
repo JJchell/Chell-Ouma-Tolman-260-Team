@@ -21,7 +21,7 @@ public class MainMenuView extends View {
         super("Main Menu"
                 + "\nPlease choose from one of the following options:" 
                 + "\nN - Start new game" 
-                + "\nR - Restart game" 
+                + "\nS - Start saved game" 
                 + "\nH - Help" 
                 + "\nG - Game Play Menu" 
                 + "\nC - River Crossing"
@@ -39,7 +39,7 @@ public class MainMenuView extends View {
         switch (menuItem) {
             case "N": startNewGame();
                 break;
-            case "R": restartGame();
+            case "S": startSavedGame();
                 break;
             case "H": getHelp();
                 break;
@@ -72,9 +72,9 @@ public class MainMenuView extends View {
         gameMenuView.display();
     }
 
-    private void restartGame() {
-        StartExistingGameView startExistingGameView = new StartExistingGameView();
-        startExistingGameView.displayStartExistingGameView();
+    private void startSavedGame() {
+        StartExistingGameView view = new StartExistingGameView();
+        view.display();
     }
 
     private void getHelp() {

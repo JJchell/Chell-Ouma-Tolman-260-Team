@@ -6,9 +6,11 @@
 package control;
 
 import exceptions.GameControlException;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import model.Characters;
@@ -113,5 +115,18 @@ public class GameControl {
         try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(filePath))) {
             out.writeObject(game);
         }   
+    }
+    
+    public static Game getGame(String path) throws GameControlException, IOException, ClassNotFoundException{
+        if (path == null)
+            throw new GameControlException("File name doesn't exist");
+        Game game;
+        
+        try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(path))) {
+            game = (Game) in.readObject();
+            MormonTrail.setCurrentGame(game);
+            MormonTrail.setPlayer(game.getPlayer());
+        }
+        return game;
     }
 }
