@@ -29,6 +29,7 @@ public class MainMenuView extends View {
                 + "\nGM - Game Map"
                 + "\nF - Fort Scene"
                 + "\nGH - Hunting Scene"
+                + "\nMR - Map Report"
                 + "\nE - Return to previous menu");
     }
     
@@ -54,6 +55,8 @@ public class MainMenuView extends View {
             case "F": fortScene(); 
                 break;
             case "GH": huntingSceneView();
+                break;
+            case "MR": mapReport();
                 break;
             case "E": return true;
             default: this.console.println("Invalid menu item");
@@ -115,6 +118,11 @@ public class MainMenuView extends View {
     private void huntingSceneView() {
         HuntingSceneView huntingSceneView = new HuntingSceneView();
         huntingSceneView.display();
+    }
+    
+    private void mapReport() {
+        MapReport mapReport = new MapReport();
+        mapReport.display();
     }
 }
         
