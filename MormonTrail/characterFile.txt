@@ -1,0 +1,9 @@
+---------List of Characters--------
+-----------------------------------------
+ Name                Level of Coolness
+
+ Main Character              5
+ James                       10
+ Shelly                      10
+ Scott                       10
+
