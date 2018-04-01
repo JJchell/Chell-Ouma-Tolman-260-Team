@@ -30,6 +30,7 @@ public class MainMenuView extends View {
                 + "\nF - Fort Scene"
                 + "\nGH - Hunting Scene"
                 + "\nMR - Map Report"
+                + "\nCL - Character List"
                 + "\nE - Return to previous menu");
     }
     
@@ -58,6 +59,8 @@ public class MainMenuView extends View {
                 break;
             case "MR": mapReport();
                 break;
+            case "CL": characterList(); 
+            
             case "E": return true;
             default: this.console.println("Invalid menu item");
         }
@@ -123,6 +126,11 @@ public class MainMenuView extends View {
     private void mapReport() {
         MapReport mapReport = new MapReport();
         mapReport.display();
+    }
+
+    private void characterList() {
+        CharacterList characterList = new CharacterList();
+        characterList.display();
     }
 }
         
